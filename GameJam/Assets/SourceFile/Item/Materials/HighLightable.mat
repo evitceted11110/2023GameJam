@@ -79,8 +79,8 @@ Material:
     - _Parallax: 0.02
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
-    - _SpeedX: 0.003
-    - _SpeedY: 0.003
+    - _SpeedX: 0
+    - _SpeedY: 0
     - _SrcBlend: 1
     - _Stencil: 0
     - _StencilComp: 8
@@ -88,7 +88,7 @@ Material:
     - _StencilReadMask: 255
     - _StencilWriteMask: 255
     - _UVSec: 0
-    - _Width: 0.005
+    - _Width: 0.05
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}

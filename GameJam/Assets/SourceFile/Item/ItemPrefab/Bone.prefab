@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemID: 1001
-  heighLightValue: 1
+  heighLightValue: 2
   autoDisappearDuration: 20
   convertDuration: 1
 --- !u!212 &572306823101516245

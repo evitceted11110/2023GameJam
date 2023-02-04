@@ -218,6 +218,8 @@ public class PlayerController : MonoBehaviour
             {
                 Collectbench collectbench = item as Collectbench;
                 collectbench.InjectItem(currentPickingItem);
+                animator.SetTrigger(ANIMATOR_THROW);
+                animator.SetBool(ANIMATOR_HAS_ITEM, false);
                 currentPickingItem = null;
             }
             else

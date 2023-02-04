@@ -66,13 +66,15 @@ public class PlayerController : MonoBehaviour
             Move(0, true);
         }
 
-        if (Input.GetKeyDown(playerControlSetting.rightKey))
+        if (Input.GetKey(playerControlSetting.rightKey))
         {
-
+            m_FacingRight = true;
+            Move(playerControlSetting.moveSpeed, false);
         }
-        if (Input.GetKeyDown(playerControlSetting.leftKey))
+        if (Input.GetKey(playerControlSetting.leftKey))
         {
-
+            m_FacingRight = false;
+            Move(-playerControlSetting.moveSpeed, false);
         }
 
 

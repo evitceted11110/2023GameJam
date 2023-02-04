@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Workbench : MonoBehaviour
 {
@@ -16,6 +17,15 @@ public class Workbench : MonoBehaviour
     public ItemBase testInjectItem;
     public float popForce;
     public float horizontalForce;
+    public bool isLeft;
+    private void Awake()
+    {
+        StageSetting stageSetting = StageManager.Instance.GetStageSetting();
+        if (isLeft)
+            SetProduct(stageSetting.leftProductItems[0]);
+        else
+            SetProduct(stageSetting.rightProductItems[0]);
+    }
     public void SetProduct(ItemBase item)
     {
         curProductID = item.itemID;

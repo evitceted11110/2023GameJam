@@ -155,7 +155,7 @@ GameObject:
   - component: {fileID: 3284131622104484302}
   - component: {fileID: 6089923358833559879}
   m_Layer: 0
-  m_Name: Collectbench
+  m_Name: RightCollectbench
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -169,7 +169,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3284131622104484297}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.3480988, y: -0.81240916, z: 0.093612455}
+  m_LocalPosition: {x: 0.87, y: 3, z: 0.093612455}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -194,6 +194,7 @@ MonoBehaviour:
   testCurProductID:
   - {fileID: 6629119574372320384, guid: 2b729f853f404ab4d923b5ce648628c3, type: 3}
   testInjectItem: {fileID: 6629119574372320384, guid: 2b729f853f404ab4d923b5ce648628c3, type: 3}
+  isLeft: 0
 --- !u!114 &6089923358833559879
 MonoBehaviour:
   m_ObjectHideFlags: 0

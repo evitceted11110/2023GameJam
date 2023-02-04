@@ -13,6 +13,15 @@ public class Collectbench : MonoBehaviour
     private List<ItemBase> productItems;
     private Dictionary<int, MergeSchedule> productSchedule = new Dictionary<int, MergeSchedule>();
     private List<int> remainingItems = new List<int>();
+    public bool isLeft;
+    private void Awake()
+    {
+        StageSetting stageSetting = StageManager.Instance.GetStageSetting();
+        if (isLeft)
+            SetProduct(stageSetting.leftProductItems);
+        else
+            SetProduct(stageSetting.rightProductItems);
+    }
     public void SetProduct(List<ItemBase> items)
     {
         productItems = items;

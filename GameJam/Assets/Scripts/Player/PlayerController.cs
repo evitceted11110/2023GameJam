@@ -26,9 +26,14 @@ public class PlayerController : MonoBehaviour
     private LayerMask m_WhatIsGround;                          // A mask determining what is ground to the character
     [SerializeField]
     private Transform m_GroundCheck;                           // A position marking where to check if the player is grounded.
-
-
+    
     const float k_GroundedRadius = .2f; // Radius of the overlap circle to determine if grounded
+    [SerializeField]
+    private Transform m_ForwardCheck;                           // A position marking where to check if the player is grounded.
+    const float k_ForwardRadius = .2f; // Radius of the overlap circle to determine if grounded
+
+
+
     private bool m_Grounded;            // Whether or not the player is grounded.
     const float k_CeilingRadius = .2f; // Radius of the overlap circle to determine if the player can stand up
     private Rigidbody2D m_Rigidbody2D;
@@ -64,17 +69,26 @@ public class PlayerController : MonoBehaviour
         bool wasGrounded = m_Grounded;
         m_Grounded = false;
 
+        
+
         // The player is grounded if a circlecast to the groundcheck position hits anything designated as ground
         // This can be done using layers instead but Sample Assets will not overwrite your project settings.
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(m_GroundCheck.position, k_GroundedRadius);
-        for (int i = 0; i < colliders.Length; i++)
+        Collider2D[] groundColliders = Physics2D.OverlapCircleAll(m_GroundCheck.position, k_GroundedRadius);
+        for (int i = 0; i < groundColliders.Length; i++)
         {
-            if (colliders[i].gameObject != gameObject)
+            if (groundColliders[i].gameObject != gameObject)
             {
                 m_Grounded = true;
             }
         }
-        ItemDetect(colliders);
+
+        Collider2D[] forwardColliders = Physics2D.OverlapCircleAll(m_ForwardCheck.position, k_ForwardRadius);
+
+        //前方有物品 優先拿取
+        if (!ItemDetect(forwardColliders))
+        {
+            ItemDetect(groundColliders);
+        }
 
         //InputDetect();
     }
@@ -117,7 +131,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void ItemDetect(Collider2D[] colliders)
+    private bool ItemDetect(Collider2D[] colliders)
     {
         for (int i = 0; i < colliders.Length; i++)
         {
@@ -128,12 +142,12 @@ public class PlayerController : MonoBehaviour
                 if (item != null)
                 {
                     ItemManager.Instance.SetHighLight(this, item);
-                    return;
+                    return true;
                 }
             }
         }
         ItemManager.Instance.SetHighLight(this, null);
-
+        return false;
     }
 
     public void Move(float move, bool jump)
@@ -169,10 +183,10 @@ public class PlayerController : MonoBehaviour
     {
         m_FacingRight = !m_FacingRight;
 
-        spriteRenderer.flipX = !m_FacingRight;
-        //Vector3 theScale = transform.localScale;
-        //theScale.x *= -1;
-        //transform.localScale = theScale;
+       // spriteRenderer.flipX = !m_FacingRight;
+        Vector3 theScale = transform.localScale;
+        theScale.x *= -1;
+        transform.localScale = theScale;
     }
 
     private void DoAction()

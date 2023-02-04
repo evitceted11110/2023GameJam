@@ -71,6 +71,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5337302764116206379}
     m_Modifications:
+    - target: {fileID: 1336512693368674012, guid: d16028b261bacb44f8a91446604b7e9b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.62
+      objectReference: {fileID: 0}
+    - target: {fileID: 1336512693368674012, guid: d16028b261bacb44f8a91446604b7e9b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.38
+      objectReference: {fileID: 0}
+    - target: {fileID: 2208015662585772853, guid: d16028b261bacb44f8a91446604b7e9b, type: 3}
+      propertyPath: m_Size.x
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2208015662585772853, guid: d16028b261bacb44f8a91446604b7e9b, type: 3}
+      propertyPath: m_Size.y
+      value: 1.7
+      objectReference: {fileID: 0}
     - target: {fileID: 2694422258962048292, guid: d16028b261bacb44f8a91446604b7e9b, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -118,6 +134,22 @@ PrefabInstance:
     - target: {fileID: 2694422258962048293, guid: d16028b261bacb44f8a91446604b7e9b, type: 3}
       propertyPath: m_Name
       value: ProtalView
+      objectReference: {fileID: 0}
+    - target: {fileID: 3461736428821236866, guid: d16028b261bacb44f8a91446604b7e9b, type: 3}
+      propertyPath: m_Size.x
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3461736428821236866, guid: d16028b261bacb44f8a91446604b7e9b, type: 3}
+      propertyPath: m_Size.y
+      value: 1.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8339620863449287815, guid: d16028b261bacb44f8a91446604b7e9b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.82
+      objectReference: {fileID: 0}
+    - target: {fileID: 8339620863449287815, guid: d16028b261bacb44f8a91446604b7e9b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.143
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d16028b261bacb44f8a91446604b7e9b, type: 3}

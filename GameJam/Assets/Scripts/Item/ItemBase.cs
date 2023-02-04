@@ -53,6 +53,8 @@ public class ItemBase : IPoolable, IItem
         }
     }
     [SerializeField]
+    private float heighLightValue = 1f;
+    [SerializeField]
     private float autoDisappearDuration = 20f;
     private Tween disappearTween;
     [SerializeField]
@@ -97,7 +99,7 @@ public class ItemBase : IPoolable, IItem
     {
         if (forceHightLight)
             return;
-        rendererMaterial.SetFloat("_Brightness", isHighLight ? 1 : 0);
+        rendererMaterial.SetFloat("_Brightness", isHighLight ? heighLightValue : 0);
     }
 
     public void ResetItem()

@@ -16,8 +16,8 @@ MonoBehaviour:
   downKey: down
   rightKey: right
   leftKey: left
-  actionKey: /
-  talkKey: .
+  actionKey: .
+  talkKey: /
   moveSpeed: 0.5
   jumpHeight: 1100
   throwStrength: 200

@@ -18,6 +18,6 @@ MonoBehaviour:
   leftKey: left
   actionKey: .
   talkKey: /
-  moveSpeed: 0
-  jumpHeight: 0
+  moveSpeed: 0.15
+  jumpHeight: 20
   throwStrength: 0

@@ -47,9 +47,9 @@ public class Workbench : MonoBehaviour
     private MergeSchedule NewMergeSchedule(int itemID)
     {
         MergeSchedule obj = Instantiate(mergeSchedulePrefab, root);
-        obj.inActiveSpriteRd.sprite = MergeIconService.GetMergeIcon(itemID).inActiveSp;
+        obj.inActiveSpriteRd.sprite = MergeIconService.Instance.GetMergeIcon(itemID).inActiveSp;
         obj.inActiveSpriteRd.enabled = true;
-        obj.activeSpriteRd.sprite = MergeIconService.GetMergeIcon(itemID).activeSp;
+        obj.activeSpriteRd.sprite = MergeIconService.Instance.GetMergeIcon(itemID).activeSp;
         obj.activeSpriteRd.enabled = false;
         obj.itemID = itemID;
         return obj;

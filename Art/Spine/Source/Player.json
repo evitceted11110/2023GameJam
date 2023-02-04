@@ -1,0 +1,32 @@
+{"skeleton":{"images":"images/"},
+"bones":[{"name":"root"}],
+"slots":[
+	{"name":"Area","bone":"root","attachment":"Area"},
+	{"name":"Player1_Leg_R","bone":"root","attachment":"Player1_Leg_R"},
+	{"name":"Player1_Leg_L","bone":"root","attachment":"Player1_Leg_L"},
+	{"name":"Player1_Hand_L","bone":"root","attachment":"Player1_Hand_L"},
+	{"name":"Player1_Body","bone":"root","attachment":"Player1_Body"},
+	{"name":"Player1_Hand_R","bone":"root","attachment":"Player1_Hand_R"},
+	{"name":"Player2_Leg_R","bone":"root","attachment":"Player2_Leg_R"},
+	{"name":"Player2_Leg_L","bone":"root","attachment":"Player2_Leg_L"},
+	{"name":"Player2_Hand_L","bone":"root","attachment":"Player2_Hand_L"},
+	{"name":"Player2_Body","bone":"root","attachment":"Player2_Body"},
+	{"name":"Player2_Hand_R","bone":"root","attachment":"Player2_Hand_R"}
+],
+"skins":{
+	"default":{
+		"Player2_Hand_R":{"Player2_Hand_R":{"x":135,"y":169,"width":118,"height":192}},
+		"Player2_Body":{"Player2_Body":{"x":270,"y":219.5,"width":300,"height":275}},
+		"Player2_Hand_L":{"Player2_Hand_L":{"x":419,"y":175,"width":118,"height":192}},
+		"Player2_Leg_L":{"Player2_Leg_L":{"x":341,"y":109,"width":114,"height":160}},
+		"Player2_Leg_R":{"Player2_Leg_R":{"x":231,"y":109,"width":114,"height":160}},
+		"Player1_Hand_R":{"Player1_Hand_R":{"x":135,"y":169,"width":118,"height":192}},
+		"Player1_Body":{"Player1_Body":{"x":276,"y":216,"width":312,"height":284}},
+		"Player1_Hand_L":{"Player1_Hand_L":{"x":419,"y":174,"width":118,"height":192}},
+		"Player1_Leg_L":{"Player1_Leg_L":{"x":341,"y":109.5,"width":116,"height":159}},
+		"Player1_Leg_R":{"Player1_Leg_R":{"x":231,"y":109.5,"width":116,"height":159}},
+		"Area":{"Area":{"x":273,"y":193,"width":322,"height":322}}
+	}
+},
+"animations":{"animation":{}}
+}

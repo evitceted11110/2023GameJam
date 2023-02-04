@@ -52,7 +52,7 @@ public class PlayerController : MonoBehaviour
 
         // The player is grounded if a circlecast to the groundcheck position hits anything designated as ground
         // This can be done using layers instead but Sample Assets will not overwrite your project settings.
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(m_GroundCheck.position, k_GroundedRadius, m_WhatIsGround);
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(m_GroundCheck.position, k_GroundedRadius);
         for (int i = 0; i < colliders.Length; i++)
         {
             if (colliders[i].gameObject != gameObject)
@@ -62,12 +62,17 @@ public class PlayerController : MonoBehaviour
                     OnLandEvent.Invoke();
             }
         }
+        ItemDetect(colliders);
 
+        InputDetect();
+    }
+
+    private void InputDetect()
+    {
         if (Input.GetKeyDown(playerControlSetting.upKey))
         {
             Move(0, true);
         }
-
         if (Input.GetKey(playerControlSetting.rightKey))
         {
             m_FacingRight = true;
@@ -78,14 +83,30 @@ public class PlayerController : MonoBehaviour
             m_FacingRight = false;
             Move(-playerControlSetting.moveSpeed, false);
         }
-
-
         if (Input.GetKeyDown(playerControlSetting.downKey))
         {
 
         }
     }
 
+    private void ItemDetect(Collider2D[] colliders)
+    {
+        for (int i = 0; i < colliders.Length; i++)
+        {
+            if (colliders[i].gameObject != gameObject)
+            {
+
+                var item = colliders[i].GetComponent<ItemBase>();
+                if (item != null)
+                {
+                    ItemManager.Instance.SetHighLight(this, item);
+                    return;
+                }
+            }
+        }
+        ItemManager.Instance.SetHighLight(this, null);
+
+    }
 
     public void Move(float move, bool jump)
     {

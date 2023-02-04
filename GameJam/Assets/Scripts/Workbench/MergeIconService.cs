@@ -5,18 +5,28 @@ using static MergeIcon;
 
 public class MergeIconService : MonoBehaviour
 {
-    public MergeIcon mergeIcon;
-    public static Dictionary<int, Icon> mergeScheduleIconDic = new Dictionary<int, Icon>();
-
-    private void OnEnable()
+    private static MergeIconService _instance;
+    public static MergeIconService Instance
     {
+        get
+        {
+            return _instance;
+        }
+    }
+    [SerializeField]
+    private MergeIcon mergeIcon;
+    private Dictionary<int, Icon> mergeScheduleIconDic = new Dictionary<int, Icon>();
+    private void Awake()
+    {
+        DontDestroyOnLoad(this.gameObject);
+        _instance = this;
         foreach (Icon info in mergeIcon.mergeScheduleIcon)
         {
             mergeScheduleIconDic.Add(info.itemID, info);
         }
     }
 
-    public static Icon GetMergeIcon(int itemID)
+    public Icon GetMergeIcon(int itemID)
     {
         return mergeScheduleIconDic[itemID];
     }

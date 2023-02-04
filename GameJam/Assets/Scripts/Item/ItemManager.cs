@@ -18,6 +18,7 @@ public class ItemManager : MonoBehaviour
     private Dictionary<int, ItemPoolManager> managerDictionary = new Dictionary<int, ItemPoolManager>();
     private void Awake()
     {
+        DontDestroyOnLoad(this.gameObject);
         _instance = this;
         for (int i = 0; i < collection.managers.Count; i++)
         {

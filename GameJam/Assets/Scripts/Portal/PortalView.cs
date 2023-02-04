@@ -14,14 +14,22 @@ public class PortalView : MonoBehaviour
         rightItemData.absorber.onAbsor = ConvertToLeft;
     }
 
-    public void SetRightID()
+    private void Start()
     {
-
+        SetRightID(rightItemData.toID);
+        SetLeftID(leftItemData.toID);
     }
 
-    public void SetLeftID()
+    public void SetRightID(int id)
     {
+        rightItemData.toID = id;
+        rightItemData.iconRenderer.sprite = MergeIconService.Instance.GetMergeIcon(id).activeSp;
+    }
 
+    public void SetLeftID(int id)
+    {
+        leftItemData.toID = id;
+        leftItemData.iconRenderer.sprite = MergeIconService.Instance.GetMergeIcon(id).activeSp;
     }
 
     private void ConvertToRight(PortalAbsorber absorber, ItemBase item)

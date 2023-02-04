@@ -101,7 +101,7 @@ public class ItemBase : IPoolable, IItem
 
     public void ResetItem()
     {
-        transform.localScale = Vector3.one;
+        transform.localScale = originScale;
     }
 
     [ContextMenu("Test")]

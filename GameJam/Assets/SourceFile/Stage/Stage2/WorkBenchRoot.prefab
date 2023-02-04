@@ -84,6 +84,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8239451776597394042, guid: 2d2056d286655ea48b95d3c7fee619a8, type: 3}
+      propertyPath: isLeft
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8239451776597394043, guid: 2d2056d286655ea48b95d3c7fee619a8, type: 3}
       propertyPath: m_Name
       value: LeftWorkbench

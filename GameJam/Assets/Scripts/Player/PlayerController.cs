@@ -14,8 +14,9 @@ public class PlayerController : MonoBehaviour
     private Animator animator;
     [SerializeField]
     private SpriteRenderer spriteRenderer;
+    [Range(0, .3f)]
     [SerializeField]
-    private float m_JumpForce = 400f;                          // Amount of force added when the player jumps.
+    private float m_JumpSmoothing = .05f;  // How much to smooth out the movement
     [Range(0, .3f)]
     [SerializeField]
     private float m_MovementSmoothing = .05f;  // How much to smooth out the movement
@@ -33,6 +34,8 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D m_Rigidbody2D;
     private bool m_FacingRight = true;  // For determining which way the player is currently facing.
     private Vector3 m_Velocity = Vector3.zero;
+    private Vector3 m_MoveVelocity = Vector3.zero;
+
     [SerializeField]
     private float jumpTimeThreshole = 0.05f;
     private float jumpTimer;
@@ -158,7 +161,7 @@ public class PlayerController : MonoBehaviour
             jumpTimer = 0;
             // Add a vertical force to the player.
             m_Grounded = false;
-            m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
+            m_Rigidbody2D.AddForce(new Vector2(0f, playerControlSetting.jumpHeight));
         }
     }
 

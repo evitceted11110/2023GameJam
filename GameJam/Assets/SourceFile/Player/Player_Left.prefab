@@ -157,7 +157,7 @@ MonoBehaviour:
   playerControlSetting: {fileID: 11400000, guid: 6cf70b461cafd6245affef685383c3db, type: 2}
   animator: {fileID: 4983334191459977503}
   spriteRenderer: {fileID: 3694798817764722698}
-  m_JumpForce: 400
+  m_JumpSmoothing: 0.05
   m_MovementSmoothing: 0.05
   m_AirControl: 1
   m_WhatIsGround:
@@ -180,10 +180,10 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_LinearDrag: 3
+  m_AngularDrag: 1
+  m_GravityScale: 3
+  m_Material: {fileID: 6200000, guid: d2cb9495a4213184b9a57b147cb0b7c5, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1

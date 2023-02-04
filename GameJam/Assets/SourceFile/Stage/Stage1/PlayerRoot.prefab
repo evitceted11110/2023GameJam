@@ -39,6 +39,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6129688611367703450}
     m_Modifications:
+    - target: {fileID: 6344998376585286576, guid: c0d406e1c5882ab4db8a72a763d4caea, type: 3}
+      propertyPath: m_JumpSmoothing
+      value: 0.018
+      objectReference: {fileID: 0}
     - target: {fileID: 6344998376585286603, guid: c0d406e1c5882ab4db8a72a763d4caea, type: 3}
       propertyPath: m_Name
       value: Player_Left

@@ -397,14 +397,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6182192861144214350, guid: f71cf9f703762004e9986226ea022e79, type: 3}
-      propertyPath: m_UsedByEffector
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7313884047416475438, guid: f71cf9f703762004e9986226ea022e79, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 168fc305a9185324ca1cf114e2a03fd2, type: 3}
     - target: {fileID: 9072973738503976231, guid: f71cf9f703762004e9986226ea022e79, type: 3}
       propertyPath: m_Name
       value: GamePlayStage

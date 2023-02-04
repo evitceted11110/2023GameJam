@@ -73,6 +73,10 @@ public class Collectbench : MonoBehaviour
         if (remainingItems.Count == 0)
         {
             DestroyProductSchedule();
+            if (isLeft)
+                GameResultManager.Instance.IsLeftComplte = true;
+            else
+                GameResultManager.Instance.IsRightComplte = true;
             Debug.Log("Complete");
         }
     }

@@ -12,7 +12,7 @@ public class Collectbench : MonoBehaviour
     private Dictionary<int, MergeSchedule> productSchedule = new Dictionary<int, MergeSchedule>();
     private List<int> remainingItems = new List<int>();
     public bool isLeft;
-    private void Awake()
+    private void Start()
     {
         StageSetting stageSetting = StageManager.Instance.GetStageSetting();
         if (isLeft)

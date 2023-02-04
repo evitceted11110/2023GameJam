@@ -4,7 +4,7 @@ using UnityEngine;
 using DG.Tweening;
 using System;
 
-public class ItemBase : IPoolable, IItem
+public class ItemBase : IPoolable, IItem, IHighLightable
 {
     public int itemID;
     public bool pickAble { get; private set; }
@@ -147,4 +147,6 @@ public class ItemBase : IPoolable, IItem
             disappearTween.Kill();
         disappearTween = null;
     }
+
+    
 }

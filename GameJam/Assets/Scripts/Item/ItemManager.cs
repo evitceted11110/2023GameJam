@@ -14,7 +14,6 @@ public class ItemManager : MonoBehaviour
     }
     [SerializeField]
     private ItemManagerCollection collection;
-    private Dictionary<object, ItemBase> currentHighLightDictionary = new Dictionary<object, ItemBase>();
     private Dictionary<int, ItemPoolManager> managerDictionary = new Dictionary<int, ItemPoolManager>();
     private void Awake()
     {
@@ -33,28 +32,4 @@ public class ItemManager : MonoBehaviour
         return managerDictionary[id].Get<ItemBase>();
     }
 
-    public void SetHighLight(object obj, ItemBase item)
-    {
-        if (!currentHighLightDictionary.ContainsKey(obj))
-        {
-            currentHighLightDictionary.Add(obj, item);
-        }
-        else
-        {
-            if (currentHighLightDictionary[obj] != null)
-                currentHighLightDictionary[obj].SetHighLight(false);
-            if (item != null)
-                item.SetHighLight(true);
-            currentHighLightDictionary[obj] = item;
-        }
-    }
-
-    public ItemBase GetHightLightItem(object obj)
-    {
-        if (currentHighLightDictionary.ContainsKey(obj))
-        {
-            return currentHighLightDictionary[obj];
-        }
-        return null;
-    }
 }

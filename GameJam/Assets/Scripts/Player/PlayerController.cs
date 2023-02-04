@@ -26,7 +26,7 @@ public class PlayerController : MonoBehaviour
     private LayerMask m_WhatIsGround;                          // A mask determining what is ground to the character
     [SerializeField]
     private Transform m_GroundCheck;                           // A position marking where to check if the player is grounded.
-    
+
     const float k_GroundedRadius = .2f; // Radius of the overlap circle to determine if grounded
     [SerializeField]
     private Transform m_ForwardCheck;                           // A position marking where to check if the player is grounded.
@@ -77,6 +77,8 @@ public class PlayerController : MonoBehaviour
             }
         }
 
+        if (currentPickingItem != null)
+            return;
         Collider2D[] forwardColliders = Physics2D.OverlapCircleAll(m_ForwardCheck.position, k_ForwardRadius);
 
         //前方有物品 優先拿取
@@ -131,16 +133,22 @@ public class PlayerController : MonoBehaviour
         {
             if (colliders[i].gameObject != gameObject)
             {
-
                 var item = colliders[i].GetComponent<ItemBase>();
                 if (item != null)
                 {
-                    ItemManager.Instance.SetHighLight(this, item);
+                    HighLightManager.Instance.SetHighLight(this, item);
+                    return true;
+                }
+
+                var itemBox = colliders[i].GetComponent<ItemBox>();
+                if (itemBox != null)
+                {
+                    HighLightManager.Instance.SetHighLight(this, itemBox);
                     return true;
                 }
             }
         }
-        ItemManager.Instance.SetHighLight(this, null);
+        HighLightManager.Instance.SetHighLight(this, null);
         return false;
     }
 
@@ -177,7 +185,7 @@ public class PlayerController : MonoBehaviour
     {
         m_FacingRight = !m_FacingRight;
 
-       // spriteRenderer.flipX = !m_FacingRight;
+        // spriteRenderer.flipX = !m_FacingRight;
         Vector3 theScale = transform.localScale;
         theScale.x *= -1;
         transform.localScale = theScale;
@@ -185,17 +193,23 @@ public class PlayerController : MonoBehaviour
 
     private void DoAction()
     {
-
         if (currentPickingItem != null)
         {
+            //手上有物品
             DoThrowItem();
             return;
         }
 
-        var item = ItemManager.Instance.GetHightLightItem(this);
-        if (item != null)
+        var item = HighLightManager.Instance.GetHighLightItem(this);
+        if (item != null && item.GetType() == typeof(ItemBase))
         {
-            DoPickItem(item);
+            DoPickItem(item as ItemBase);
+            return;
+        }
+        if (item != null && item.GetType() == typeof(ItemBox))
+        {
+            ItemBox box = item as ItemBox;
+            box.GenItem();
             return;
         }
     }

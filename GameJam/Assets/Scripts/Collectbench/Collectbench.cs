@@ -80,7 +80,7 @@ public class Collectbench : MonoBehaviour,IHighLightable
                 break;
             }
         }
-        CollectManager.Instance.OnCollectedCheck(item);
+        CollectManager.Instance.OnCollectedCheck(item, isLeft);
         CheckCompleteMission();
     }
     private void CheckCompleteMission()

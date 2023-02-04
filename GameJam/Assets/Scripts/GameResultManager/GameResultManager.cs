@@ -57,6 +57,7 @@ public class GameResultManager : MonoBehaviour
             {
                 action.Invoke();
             }
+            CollectManager.Instance.GameMissionComplete();
             Debug.LogWarning("Mission Complete");
             completeCallBack.Clear();
         }

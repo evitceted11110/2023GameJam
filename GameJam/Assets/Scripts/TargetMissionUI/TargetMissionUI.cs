@@ -21,10 +21,11 @@ public class TargetMissionUI : MonoBehaviour
             SetProduct(stageSetting.rightProductItems);
         CollectManager.Instance.InjectCompleteActionEvent(RefreshTargetUI);
     }
-    
-    private void RefreshTargetUI(ItemBase item)
+
+    private void RefreshTargetUI(ItemBase item, bool isLeft)
     {
-        InjectItem(item);
+        if (this.isLeft == isLeft)
+            InjectItem(item);
     }
     public void SetProduct(List<ItemBase> items)
     {

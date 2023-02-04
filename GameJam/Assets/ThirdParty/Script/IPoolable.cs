@@ -20,5 +20,10 @@ public abstract class IPoolable : MonoBehaviour
     {
         manager.RecycleToRoot(this);
     }
+
+    public Transform GetManagerRoot()
+    {
+        return manager.transform;
+    }
 }
 

@@ -47,4 +47,13 @@ public class ItemManager : MonoBehaviour
             currentHighLightDictionary[obj] = item;
         }
     }
+
+    public ItemBase GetHightLightItem(object obj)
+    {
+        if (currentHighLightDictionary.ContainsKey(obj))
+        {
+            return currentHighLightDictionary[obj];
+        }
+        return null;
+    }
 }

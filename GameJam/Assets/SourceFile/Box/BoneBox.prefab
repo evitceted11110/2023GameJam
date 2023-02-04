@@ -46,8 +46,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemID: 1001
-  popForce: 500
-  horizontalForce: 100
+  popForce: 50
+  horizontalForce: 25
 --- !u!212 &3175067779641733905
 SpriteRenderer:
   m_ObjectHideFlags: 0

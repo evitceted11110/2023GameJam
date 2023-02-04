@@ -7,7 +7,8 @@ using System;
 public class ItemBase : IPoolable, IItem
 {
     public int itemID;
-    public Collider2D _collider2D;
+    public bool pickAble { get; private set; }
+    private Collider2D _collider2D;
     public new Collider2D collider2D
     {
         get
@@ -19,7 +20,7 @@ public class ItemBase : IPoolable, IItem
             return _collider2D;
         }
     }
-    public Rigidbody2D _rigidbody2D;
+    private Rigidbody2D _rigidbody2D;
     public Rigidbody2D rigid2D
     {
         get
@@ -31,7 +32,7 @@ public class ItemBase : IPoolable, IItem
             return _rigidbody2D;
         }
     }
-    public SpriteRenderer _spriteRenderer;
+    private SpriteRenderer _spriteRenderer;
     public SpriteRenderer spriteRenderer
     {
         get
@@ -51,15 +52,25 @@ public class ItemBase : IPoolable, IItem
             return spriteRenderer.sharedMaterial;
         }
     }
-    public float convertDuration = 1f;
+    [SerializeField]
+    private float autoDisappearDuration = 20f;
+    private Tween disappearTween;
+    [SerializeField]
+    private float convertDuration = 1f;
     private bool forceHightLight;
 
     private void Awake()
     {
         spriteRenderer.sharedMaterial = Material.Instantiate(spriteRenderer.sharedMaterial);
     }
+    private void OnEnable()
+    {
+        pickAble = true;
+        DoDisappearTimer();
+    }
     public void OnConvert(Action onComplete)
     {
+        pickAble = false;
         DOVirtual.Float(0, 1, convertDuration, (value) =>
          {
              transform.localScale = Vector3.one * Mathf.Lerp(1, 0, value);
@@ -74,6 +85,7 @@ public class ItemBase : IPoolable, IItem
 
     public void OnPickUp()
     {
+        KillTween();
         forceHightLight = true;
         rigid2D.simulated = false;
         collider2D.enabled = false;
@@ -99,11 +111,31 @@ public class ItemBase : IPoolable, IItem
 
     public void OnRelese(float force)
     {
+        DoDisappearTimer();
         transform.parent = GetManagerRoot();
         forceHightLight = false;
         collider2D.enabled = true;
         rigid2D.simulated = true;
         SetHighLight(false);
         rigid2D.AddForce(new Vector2(force, 0));
+    }
+
+    private void DoDisappearTimer()
+    {
+        KillTween();
+        disappearTween = DOVirtual.Float(0, 1, autoDisappearDuration, (value) =>
+        {
+
+        }).OnComplete(() =>
+        {
+            OnConvert(() => { });
+        });
+    }
+
+    private void KillTween()
+    {
+        if (disappearTween != null)
+            disappearTween.Kill();
+        disappearTween = null;
     }
 }

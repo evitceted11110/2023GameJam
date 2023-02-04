@@ -16,8 +16,11 @@ MonoBehaviour:
   note: "\u7B2C\u4E8C\u95DC"
   createObjects:
   - {fileID: 810486941337220011, guid: 47ca587fb5d9c724b83cbc4d004c3f45, type: 3}
-  - {fileID: 4653934949245669743, guid: e8fcfb5fa0d76c44898197c68e28e5bf, type: 3}
-  - {fileID: 8239451776597394043, guid: 2d2056d286655ea48b95d3c7fee619a8, type: 3}
+  - {fileID: 5278881808037003794, guid: b79a225ebce5857478ba6eaf650e1ae5, type: 3}
+  - {fileID: 3344580510723032457, guid: b81f88d6d64ba6e4babd3a4b6803beb3, type: 3}
   - {fileID: 1910971247633902943, guid: 793cee400f077dc4b8f54ca2d813da56, type: 3}
   - {fileID: 5511331038348374920, guid: 8072c7f221be8e548b26356c1f3b4687, type: 3}
   - {fileID: 2453774399747961899, guid: 74bfe80e09b9aef46a7dc307dbc04d32, type: 3}
+  - {fileID: 6476365667822895490, guid: e0a3ed90f2b40a742936b54b87b9c3ce, type: 3}
+  leftProductItems: []
+  rightProductItems: []

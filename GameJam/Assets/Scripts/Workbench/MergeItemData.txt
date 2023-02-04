@@ -1,0 +1,74 @@
+ [{
+  "ITEM_TYPE": 1,
+  "ITEM_ID": 1001,
+  "ITEM_NAME": "Bone"
+ },
+ {
+  "ITEM_TYPE": 1,
+  "ITEM_ID": 1002,
+  "ITEM_NAME": "Iron"
+ },
+ {
+  "ITEM_TYPE": 2,
+  "ITEM_ID": 2001,
+  "ITEM_NAME": "Gear"
+ },
+ {
+  "ITEM_TYPE": 2,
+  "ITEM_ID": 2002,
+  "ITEM_NAME": "Screw"
+ },
+ {
+  "ITEM_TYPE": 2,
+  "ITEM_ID": "2003",
+  "ITEM_NAME": "Gold"
+ },
+ {
+  "ITEM_TYPE": 2,
+  "ITEM_ID": 2004,
+  "ITEM_NAME": "Battery"
+ },
+ {
+  "ITEM_TYPE": 2,
+  "ITEM_ID": 2005,
+  "ITEM_NAME": "Vegetable"
+ },
+ {
+  "ITEM_TYPE": 2,
+  "ITEM_ID": 2006,
+  "ITEM_NAME": "Meat"
+ },
+ {
+  "ITEM_TYPE": 2,
+  "ITEM_ID": 2007,
+  "ITEM_NAME": "Wheat"
+ },
+ {
+  "ITEM_TYPE": 2,
+  "ITEM_ID": 2008,
+  "ITEM_NAME": "Banana"
+ },
+ {
+  "ITEM_TYPE": 3,
+  "ITEM_ID": 3001,
+  "ITEM_NAME": "Watch",
+  "FORMULA":[2001,2003]
+ },
+ {
+  "ITEM_TYPE": 3,
+  "ITEM_ID": 3002,
+  "ITEM_NAME": "Bike",
+  "FORMULA":[2001,2002]
+ },
+ {
+  "ITEM_TYPE": 3,
+  "ITEM_ID": 3003,
+  "ITEM_NAME": "BBQ",
+  "FORMULA":[2005,2006]
+ },
+ {
+  "ITEM_TYPE": 3,
+  "ITEM_ID": 3004,
+  "ITEM_NAME": "Rice",
+  "FORMULA":[2006,2007]
+ }]

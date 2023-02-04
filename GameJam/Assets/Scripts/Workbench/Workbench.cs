@@ -7,7 +7,6 @@ using UnityEngine;
 public class Workbench : MonoBehaviour
 {
     public MergeTable mergeTable;
-    public MergeIcon mergeIcon;
     private Dictionary<int , MergeSchedule> mergeSchedule = new Dictionary<int, MergeSchedule>();
     public MergeSchedule mergeSchedulePrefab;
     public Transform root;
@@ -20,7 +19,6 @@ public class Workbench : MonoBehaviour
     public float horizontalForce;
     private void OnEnable()
     {
-        mergeIcon.Init();
         mergeTable.InitTable();
     }
     public void SetProduct(ItemBase item)
@@ -50,9 +48,9 @@ public class Workbench : MonoBehaviour
     private MergeSchedule NewMergeSchedule(int itemID)
     {
         MergeSchedule obj = Instantiate(mergeSchedulePrefab, root);
-        obj.inActiveSpriteRd.sprite = mergeIcon.mergeScheduleIconDic[itemID].inActiveSp;
+        obj.inActiveSpriteRd.sprite = MergeIconService.GetMergeIcon(itemID).inActiveSp;
         obj.inActiveSpriteRd.enabled = true;
-        obj.activeSpriteRd.sprite = mergeIcon.mergeScheduleIconDic[itemID].activeSp;
+        obj.activeSpriteRd.sprite = MergeIconService.GetMergeIcon(itemID).activeSp;
         obj.activeSpriteRd.enabled = false;
         obj.itemID = itemID;
         return obj;

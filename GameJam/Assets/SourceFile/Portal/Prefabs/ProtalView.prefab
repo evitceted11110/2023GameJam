@@ -24459,11 +24459,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be105253024a6b24ca73aaaeb432a172, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  toRightID: 0
-  toLeftID: 0
+  toRightID: 2006
+  toLeftID: 2002
   leftAbsorber: {fileID: 7440985678422381974}
   rightAbsorber: {fileID: 1703858559623680401}
-  genForce: 500
+  genForce: 250
 --- !u!1 &2694422259143061248
 GameObject:
   m_ObjectHideFlags: 0

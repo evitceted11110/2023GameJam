@@ -7,6 +7,18 @@ using System;
 public class ItemBase : IPoolable, IItem
 {
     public int itemID;
+    public Collider2D _collider2D;
+    public new Collider2D collider2D
+    {
+        get
+        {
+            if (_collider2D == null)
+            {
+                _collider2D = GetComponent<Collider2D>();
+            }
+            return _collider2D;
+        }
+    }
     public Rigidbody2D _rigidbody2D;
     public Rigidbody2D rigid2D
     {
@@ -40,6 +52,7 @@ public class ItemBase : IPoolable, IItem
         }
     }
     public float convertDuration = 1f;
+    private bool forceHightLight;
 
     private void Awake()
     {
@@ -61,11 +74,15 @@ public class ItemBase : IPoolable, IItem
 
     public void OnPickUp()
     {
-
+        forceHightLight = true;
+        rigid2D.simulated = false;
+        collider2D.enabled = false;
     }
 
     public void SetHighLight(bool isHighLight)
     {
+        if (forceHightLight)
+            return;
         rendererMaterial.SetFloat("_Brightness", isHighLight ? 1 : 0);
     }
 
@@ -78,5 +95,15 @@ public class ItemBase : IPoolable, IItem
     private void Test()
     {
         OnConvert(() => { });
+    }
+
+    public void OnRelese(float force)
+    {
+        transform.parent = GetManagerRoot();
+        forceHightLight = false;
+        collider2D.enabled = true;
+        rigid2D.simulated = true;
+        SetHighLight(false);
+        rigid2D.AddForce(new Vector2(force, 0));
     }
 }

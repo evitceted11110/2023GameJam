@@ -5,12 +5,26 @@ using UnityEngine.Events;
 
 public class PlayerController : MonoBehaviour
 {
+    private const string ANIMATOR_WALK = "walk";
+    private const string ANIMATOR_THROW = "doThrow";
+    private const string ANIMATOR_HAS_ITEM = "hasItem";
+
     public PlayerControlSetting playerControlSetting;
-    [SerializeField] private float m_JumpForce = 400f;                          // Amount of force added when the player jumps.
-    [Range(0, .3f)] [SerializeField] private float m_MovementSmoothing = .05f;  // How much to smooth out the movement
-    [SerializeField] private bool m_AirControl = false;                         // Whether or not a player can steer while jumping;
-    [SerializeField] private LayerMask m_WhatIsGround;                          // A mask determining what is ground to the character
-    [SerializeField] private Transform m_GroundCheck;                           // A position marking where to check if the player is grounded.
+    [SerializeField]
+    private Animator animator;
+    [SerializeField]
+    private SpriteRenderer spriteRenderer;
+    [SerializeField]
+    private float m_JumpForce = 400f;                          // Amount of force added when the player jumps.
+    [Range(0, .3f)]
+    [SerializeField]
+    private float m_MovementSmoothing = .05f;  // How much to smooth out the movement
+    [SerializeField]
+    private bool m_AirControl = false;                         // Whether or not a player can steer while jumping;
+    [SerializeField]
+    private LayerMask m_WhatIsGround;                          // A mask determining what is ground to the character
+    [SerializeField]
+    private Transform m_GroundCheck;                           // A position marking where to check if the player is grounded.
 
 
     const float k_GroundedRadius = .2f; // Radius of the overlap circle to determine if grounded
@@ -22,31 +36,28 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private float jumpTimeThreshole = 0.05f;
     private float jumpTimer;
-    [Header("Events")]
-    [Space]
+    [SerializeField]
+    private float actionThreshole = 0.05f;
+    private float actionTimer;
+    [Header("Pick")]
+    [SerializeField]
+    private Transform pickItemTransform;
+    private ItemBase currentPickingItem;
 
-    public UnityEvent OnLandEvent;
-
-    [System.Serializable]
-    public class BoolEvent : UnityEvent<bool> { }
-
-    public BoolEvent OnCrouchEvent;
-    private bool m_wasCrouching = false;
 
     private void Awake()
     {
         m_Rigidbody2D = GetComponent<Rigidbody2D>();
+    }
 
-        if (OnLandEvent == null)
-            OnLandEvent = new UnityEvent();
-
-        if (OnCrouchEvent == null)
-            OnCrouchEvent = new BoolEvent();
+    private void Update()
+    {
+        InputDetect();
     }
 
     private void FixedUpdate()
     {
-        jumpTimer += Time.deltaTime;
+        AddTimer();
         bool wasGrounded = m_Grounded;
         m_Grounded = false;
 
@@ -58,34 +69,48 @@ public class PlayerController : MonoBehaviour
             if (colliders[i].gameObject != gameObject)
             {
                 m_Grounded = true;
-                if (!wasGrounded)
-                    OnLandEvent.Invoke();
             }
         }
         ItemDetect(colliders);
 
-        InputDetect();
+        //InputDetect();
     }
 
+    private void AddTimer()
+    {
+        jumpTimer += Time.deltaTime;
+        actionTimer += Time.deltaTime;
+    }
     private void InputDetect()
     {
         if (Input.GetKeyDown(playerControlSetting.upKey))
         {
             Move(0, true);
         }
+        //else
         if (Input.GetKey(playerControlSetting.rightKey))
         {
-            m_FacingRight = true;
             Move(playerControlSetting.moveSpeed, false);
         }
+        else
         if (Input.GetKey(playerControlSetting.leftKey))
         {
-            m_FacingRight = false;
             Move(-playerControlSetting.moveSpeed, false);
         }
+        else
+        {
+            animator.SetBool(ANIMATOR_WALK, false);
+        }
+
+        //else
         if (Input.GetKeyDown(playerControlSetting.downKey))
         {
 
+        }
+        // else
+        if (Input.GetKeyDown(playerControlSetting.actionKey))
+        {
+            DoAction();
         }
     }
 
@@ -110,28 +135,20 @@ public class PlayerController : MonoBehaviour
 
     public void Move(float move, bool jump)
     {
-        //only control the player if grounded or airControl is turned on
         if (m_Grounded || m_AirControl)
         {
-            // Move the character by finding the target velocity
             Vector3 targetVelocity = new Vector2(move * 10f, m_Rigidbody2D.velocity.y);
-            // And then smoothing it out and applying it to the character
             m_Rigidbody2D.velocity = Vector3.SmoothDamp(m_Rigidbody2D.velocity, targetVelocity, ref m_Velocity, m_MovementSmoothing);
-
-            // If the input is moving the player right and the player is facing left...
+            animator.SetBool(ANIMATOR_WALK, true);
             if (move > 0 && !m_FacingRight)
             {
-                // ... flip the player.
                 Flip();
             }
-            // Otherwise if the input is moving the player left and the player is facing right...
             else if (move < 0 && m_FacingRight)
             {
-                // ... flip the player.
                 Flip();
             }
         }
-        // If the player should jump...
         if (m_Grounded && jump)
         {
             if (jumpTimer < jumpTimeThreshole)
@@ -145,15 +162,47 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-
     private void Flip()
     {
-        // Switch the way the player is labelled as facing.
         m_FacingRight = !m_FacingRight;
 
-        // Multiply the player's x local scale by -1.
-        Vector3 theScale = transform.localScale;
-        theScale.x *= -1;
-        transform.localScale = theScale;
+        spriteRenderer.flipX = !m_FacingRight;
+        //Vector3 theScale = transform.localScale;
+        //theScale.x *= -1;
+        //transform.localScale = theScale;
+    }
+
+    private void DoAction()
+    {
+
+        if (currentPickingItem != null)
+        {
+            DoThrowItem();
+            return;
+        }
+
+        var item = ItemManager.Instance.GetHightLightItem(this);
+        if (item != null)
+        {
+            DoPickItem(item);
+            return;
+        }
+    }
+
+    private void DoThrowItem()
+    {
+        animator.SetTrigger(ANIMATOR_THROW);
+        animator.SetBool(ANIMATOR_HAS_ITEM, false);
+        currentPickingItem.OnRelese(m_FacingRight ? playerControlSetting.throwStrength : -playerControlSetting.throwStrength);
+        currentPickingItem = null;
+    }
+
+    private void DoPickItem(ItemBase item)
+    {
+        animator.SetBool(ANIMATOR_HAS_ITEM, true);
+        item.OnPickUp();
+        item.transform.parent = pickItemTransform;
+        item.transform.localPosition = Vector3.zero;
+        currentPickingItem = item;
     }
 }

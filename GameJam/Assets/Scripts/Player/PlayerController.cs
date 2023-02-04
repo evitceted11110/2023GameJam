@@ -19,7 +19,9 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D m_Rigidbody2D;
     private bool m_FacingRight = true;  // For determining which way the player is currently facing.
     private Vector3 m_Velocity = Vector3.zero;
-
+    [SerializeField]
+    private float jumpTimeThreshole = 0.05f;
+    private float jumpTimer;
     [Header("Events")]
     [Space]
 
@@ -44,6 +46,7 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        jumpTimer += Time.deltaTime;
         bool wasGrounded = m_Grounded;
         m_Grounded = false;
 
@@ -110,6 +113,11 @@ public class PlayerController : MonoBehaviour
         // If the player should jump...
         if (m_Grounded && jump)
         {
+            if (jumpTimer < jumpTimeThreshole)
+            {
+                return;
+            }
+            jumpTimer = 0;
             // Add a vertical force to the player.
             m_Grounded = false;
             m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));

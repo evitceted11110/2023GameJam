@@ -5,7 +5,6 @@ using UnityEngine.Events;
 
 public class PlayerController : MonoBehaviour
 {
-    public GameObject playerPrefab;
     public PlayerControlSetting playerControlSetting;
     [SerializeField] private float m_JumpForce = 400f;                          // Amount of force added when the player jumps.
     [Range(0, .3f)] [SerializeField] private float m_MovementSmoothing = .05f;  // How much to smooth out the movement

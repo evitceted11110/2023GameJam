@@ -1,0 +1,869 @@
+fileFormatVersion: 2
+guid: 6eb10e6b04ef85d4b9691ee8694b5a18
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: Coin_0
+  - first:
+      213: 21300002
+    second: Coin_1
+  - first:
+      213: 21300004
+    second: Coin_2
+  - first:
+      213: 21300006
+    second: Coin_3
+  - first:
+      213: 21300008
+    second: Coin_4
+  - first:
+      213: 21300010
+    second: Coin_5
+  - first:
+      213: 21300012
+    second: Coin_6
+  - first:
+      213: 21300014
+    second: Coin_7
+  - first:
+      213: 21300016
+    second: Coin_8
+  - first:
+      213: 21300018
+    second: Coin_9
+  - first:
+      213: 21300020
+    second: Coin_10
+  - first:
+      213: 21300022
+    second: Coin_11
+  - first:
+      213: 7679513532445632118
+    second: Particle_Coin_Gold_0
+  - first:
+      213: 5230944923137914150
+    second: Particle_Coin_Gold_1
+  - first:
+      213: 3537877950099043288
+    second: Particle_Coin_Gold_2
+  - first:
+      213: 3290947039447085111
+    second: Particle_Coin_Gold_3
+  - first:
+      213: -6034617668155133823
+    second: Particle_Coin_Gold_4
+  - first:
+      213: -185948908803298939
+    second: Particle_Coin_Gold_5
+  - first:
+      213: 2469670139406393938
+    second: Particle_Coin_Gold_6
+  - first:
+      213: -4393190180851685651
+    second: Particle_Coin_Gold_7
+  - first:
+      213: 7513136986840861115
+    second: Particle_Coin_Gold_8
+  - first:
+      213: 6475665078147278647
+    second: Particle_Coin_Gold_9
+  - first:
+      213: 9081453116680560142
+    second: Particle_Coin_Gold_10
+  - first:
+      213: -7241545760439098276
+    second: Particle_Coin_Gold_11
+  - first:
+      213: -3977642669879210344
+    second: Particle_Coin_Gold_12
+  - first:
+      213: 5413667625100678294
+    second: Particle_Coin_Gold_13
+  - first:
+      213: -972509800648782445
+    second: Particle_Coin_Gold_14
+  - first:
+      213: 2042452997514970210
+    second: Particle_Coin_Gold_15
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 1
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 50
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 1
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 47
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 1
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Particle_Coin_Gold_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 384
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6762a35bedc139a60800000000000000
+      internalID: 7679513532445632118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Particle_Coin_Gold_1
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 384
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 625b44f51bc089840800000000000000
+      internalID: 5230944923137914150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Particle_Coin_Gold_2
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 384
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d3375a4041191130800000000000000
+      internalID: 3537877950099043288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Particle_Coin_Gold_3
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 384
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 730fddc65eacbad20800000000000000
+      internalID: 3290947039447085111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Particle_Coin_Gold_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 256
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 180315e143bb04ca0800000000000000
+      internalID: -6034617668155133823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Particle_Coin_Gold_5
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 256
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5896860e3706b6df0800000000000000
+      internalID: -185948908803298939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Particle_Coin_Gold_6
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 256
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25225bb28e7064220800000000000000
+      internalID: 2469670139406393938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Particle_Coin_Gold_7
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 256
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de6e99f7ec04803c0800000000000000
+      internalID: -4393190180851685651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Particle_Coin_Gold_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb98f718846044860800000000000000
+      internalID: 7513136986840861115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Particle_Coin_Gold_9
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 737ee5b341f2ed950800000000000000
+      internalID: 6475665078147278647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Particle_Coin_Gold_10
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0edb187e7dc70e70800000000000000
+      internalID: 9081453116680560142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Particle_Coin_Gold_11
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c54aa4c8f7cd08b90800000000000000
+      internalID: -7241545760439098276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Particle_Coin_Gold_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89ec962f0139cc8c0800000000000000
+      internalID: -3977642669879210344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Particle_Coin_Gold_13
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 694982ea506312b40800000000000000
+      internalID: 5413667625100678294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Particle_Coin_Gold_14
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39d4eb72d73f082f0800000000000000
+      internalID: -972509800648782445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Particle_Coin_Gold_15
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 264cf4b0e20485c10800000000000000
+      internalID: 2042452997514970210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline:
+    - - {x: 159, y: -19}
+      - {x: 140, y: -27}
+      - {x: 140, y: -109}
+      - {x: 165, y: -118}
+      - {x: 238, y: -118}
+      - {x: 245, y: -102}
+      - {x: 245, y: -48}
+      - {x: 224, y: -19}
+    - - {x: 97, y: -26}
+      - {x: 17, y: -26}
+      - {x: 12, y: -27}
+      - {x: 12, y: -78}
+      - {x: 45, y: -114}
+      - {x: 100, y: -114}
+      - {x: 119, y: -96}
+      - {x: 119, y: -66}
+      - {x: 107, y: -38}
+    - - {x: -100, y: -37}
+      - {x: -109, y: -42}
+      - {x: -116, y: -46}
+      - {x: -116, y: -82}
+      - {x: -74, y: -102}
+      - {x: -6, y: -102}
+      - {x: -6, y: -54}
+      - {x: -57, y: -37}
+    - - {x: -244, y: -46}
+      - {x: -244, y: -74}
+      - {x: -243, y: -78}
+      - {x: -205, y: -90}
+      - {x: -145, y: -90}
+      - {x: -133, y: -88}
+      - {x: -133, y: -59}
+      - {x: -165, y: -46}
+    - - {x: -204, y: 111}
+      - {x: -244, y: 92}
+      - {x: -244, y: 37}
+      - {x: -236, y: 26}
+      - {x: -176, y: 26}
+      - {x: -136, y: 42}
+      - {x: -136, y: 98}
+      - {x: -147, y: 111}
+    - - {x: -25, y: 104}
+      - {x: -77, y: 104}
+      - {x: -109, y: 91}
+      - {x: -116, y: 80}
+      - {x: -116, y: 40}
+      - {x: -104, y: 34}
+      - {x: -32, y: 34}
+      - {x: -6, y: 52}
+      - {x: -6, y: 93}
+      - {x: -11, y: 103}
+    - - {x: 21, y: 88}
+      - {x: 12, y: 73}
+      - {x: 12, y: 46}
+      - {x: 99, y: 46}
+      - {x: 123, y: 55}
+      - {x: 123, y: 85}
+      - {x: 109, y: 88}
+    - - {x: 140, y: 76}
+      - {x: 140, y: 57}
+      - {x: 143, y: 54}
+      - {x: 251, y: 54}
+      - {x: 251, y: 76}
+    - - {x: -182, y: 244}
+      - {x: -221, y: 244}
+      - {x: -244, y: 218}
+      - {x: -244, y: 161}
+      - {x: -224, y: 136}
+      - {x: -158, y: 136}
+      - {x: -140, y: 144}
+      - {x: -140, y: 230}
+      - {x: -169, y: 243}
+    - - {x: -93, y: 247}
+      - {x: -116, y: 228}
+      - {x: -116, y: 155}
+      - {x: -96, y: 136}
+      - {x: -24, y: 136}
+      - {x: -13, y: 165}
+      - {x: -13, y: 233}
+      - {x: -38, y: 247}
+    - - {x: 35, y: 247}
+      - {x: 12, y: 238}
+      - {x: 12, y: 142}
+      - {x: 20, y: 138}
+      - {x: 88, y: 138}
+      - {x: 116, y: 159}
+      - {x: 116, y: 230}
+      - {x: 107, y: 247}
+    - - {x: 168, y: 246}
+      - {x: 140, y: 222}
+      - {x: 140, y: 161}
+      - {x: 164, y: 144}
+      - {x: 229, y: 144}
+      - {x: 246, y: 169}
+      - {x: 246, y: 239}
+      - {x: 230, y: 246}
+    physicsShape:
+    - - {x: 244, y: -64}
+      - {x: 239, y: -53}
+      - {x: 215, y: -26}
+      - {x: 193, y: -20}
+      - {x: 166, y: -20}
+      - {x: 146, y: -34}
+      - {x: 141, y: -49}
+      - {x: 141, y: -73}
+      - {x: 152, y: -96}
+      - {x: 175, y: -115}
+      - {x: 190, y: -117}
+      - {x: 220, y: -117}
+      - {x: 226, y: -115}
+      - {x: 245, y: -93}
+      - {x: 245, y: -74}
+    - - {x: 118, y: -69}
+      - {x: 111, y: -57}
+      - {x: 102, y: -46}
+      - {x: 77, y: -27}
+      - {x: 34, y: -27}
+      - {x: 32, y: -28}
+      - {x: 23, y: -32}
+      - {x: 13, y: -47}
+      - {x: 13, y: -70}
+      - {x: 19, y: -84}
+      - {x: 35, y: -98}
+      - {x: 41, y: -102}
+      - {x: 59, y: -113}
+      - {x: 95, y: -113}
+      - {x: 107, y: -107}
+      - {x: 118, y: -91}
+    - - {x: -15, y: -55}
+      - {x: -38, y: -45}
+      - {x: -63, y: -38}
+      - {x: -99, y: -38}
+      - {x: -115, y: -44}
+      - {x: -115, y: -69}
+      - {x: -105, y: -81}
+      - {x: -79, y: -95}
+      - {x: -58, y: -100}
+      - {x: -25, y: -100}
+      - {x: -16, y: -98}
+      - {x: -7, y: -88}
+      - {x: -7, y: -70}
+    - - {x: -146, y: -56}
+      - {x: -189, y: -47}
+      - {x: -206, y: -46}
+      - {x: -233, y: -46}
+      - {x: -243, y: -51}
+      - {x: -244, y: -56}
+      - {x: -244, y: -68}
+      - {x: -236, y: -74}
+      - {x: -219, y: -81}
+      - {x: -194, y: -87}
+      - {x: -187, y: -89}
+      - {x: -152, y: -89}
+      - {x: -142, y: -88}
+      - {x: -135, y: -83}
+      - {x: -134, y: -79}
+      - {x: -134, y: -66}
+    - - {x: -136, y: 69}
+      - {x: -136, y: 85}
+      - {x: -143, y: 96}
+      - {x: -155, y: 109}
+      - {x: -164, y: 111}
+      - {x: -193, y: 111}
+      - {x: -219, y: 102}
+      - {x: -241, y: 78}
+      - {x: -244, y: 65}
+      - {x: -244, y: 55}
+      - {x: -240, y: 40}
+      - {x: -223, y: 27}
+      - {x: -187, y: 27}
+      - {x: -175, y: 31}
+      - {x: -154, y: 44}
+      - {x: -141, y: 57}
+    - - {x: -15, y: 97}
+      - {x: -34, y: 103}
+      - {x: -59, y: 103}
+      - {x: -76, y: 100}
+      - {x: -98, y: 91}
+      - {x: -115, y: 73}
+      - {x: -116, y: 71}
+      - {x: -116, y: 52}
+      - {x: -115, y: 46}
+      - {x: -100, y: 35}
+      - {x: -59, y: 35}
+      - {x: -36, y: 39}
+      - {x: -7, y: 60}
+      - {x: -7, y: 84}
+    - - {x: 123, y: 73}
+      - {x: 122, y: 78}
+      - {x: 111, y: 85}
+      - {x: 97, y: 87}
+      - {x: 55, y: 87}
+      - {x: 25, y: 81}
+      - {x: 12, y: 72}
+      - {x: 12, y: 55}
+      - {x: 21, y: 48}
+      - {x: 33, y: 47}
+      - {x: 79, y: 47}
+      - {x: 102, y: 51}
+      - {x: 119, y: 56}
+      - {x: 123, y: 65}
+    - - {x: 140, y: 75}
+      - {x: 140, y: 54}
+      - {x: 248, y: 54}
+      - {x: 251, y: 55}
+      - {x: 251, y: 72}
+      - {x: 250, y: 75}
+    - - {x: -141, y: 192}
+      - {x: -143, y: 204}
+      - {x: -153, y: 221}
+      - {x: -171, y: 238}
+      - {x: -180, y: 243}
+      - {x: -213, y: 243}
+      - {x: -226, y: 234}
+      - {x: -237, y: 221}
+      - {x: -243, y: 206}
+      - {x: -243, y: 179}
+      - {x: -236, y: 163}
+      - {x: -222, y: 145}
+      - {x: -201, y: 136}
+      - {x: -173, y: 136}
+      - {x: -152, y: 149}
+      - {x: -145, y: 160}
+      - {x: -141, y: 173}
+    - - {x: -14, y: 206}
+      - {x: -20, y: 221}
+      - {x: -34, y: 237}
+      - {x: -46, y: 244}
+      - {x: -56, y: 246}
+      - {x: -77, y: 246}
+      - {x: -99, y: 235}
+      - {x: -110, y: 219}
+      - {x: -114, y: 209}
+      - {x: -115, y: 203}
+      - {x: -115, y: 177}
+      - {x: -107, y: 157}
+      - {x: -90, y: 143}
+      - {x: -75, y: 137}
+      - {x: -48, y: 137}
+      - {x: -31, y: 145}
+      - {x: -14, y: 171}
+    - - {x: 115, y: 188}
+      - {x: 115, y: 212}
+      - {x: 111, y: 224}
+      - {x: 106, y: 230}
+      - {x: 95, y: 240}
+      - {x: 82, y: 246}
+      - {x: 67, y: 247}
+      - {x: 56, y: 247}
+      - {x: 38, y: 239}
+      - {x: 25, y: 227}
+      - {x: 13, y: 205}
+      - {x: 13, y: 168}
+      - {x: 33, y: 144}
+      - {x: 48, y: 140}
+      - {x: 73, y: 140}
+      - {x: 94, y: 150}
+      - {x: 103, y: 162}
+      - {x: 113, y: 178}
+    - - {x: 245, y: 190}
+      - {x: 245, y: 220}
+      - {x: 232, y: 237}
+      - {x: 212, y: 246}
+      - {x: 193, y: 246}
+      - {x: 178, y: 243}
+      - {x: 164, y: 235}
+      - {x: 145, y: 216}
+      - {x: 140, y: 198}
+      - {x: 140, y: 176}
+      - {x: 142, y: 166}
+      - {x: 162, y: 147}
+      - {x: 170, y: 145}
+      - {x: 198, y: 145}
+      - {x: 218, y: 155}
+      - {x: 235, y: 168}
+    bones: []
+    spriteID: 6e07e154cb3ec76429e1784e47350ac8
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Particle_Coin_Gold_2: 3537877950099043288
+      Particle_Coin_Gold_1: 5230944923137914150
+      Particle_Coin_Gold_10: 9081453116680560142
+      Particle_Coin_Gold_7: -4393190180851685651
+      Particle_Coin_Gold_13: 5413667625100678294
+      Particle_Coin_Gold_6: 2469670139406393938
+      Particle_Coin_Gold_11: -7241545760439098276
+      Particle_Coin_Gold_15: 2042452997514970210
+      Particle_Coin_Gold_5: -185948908803298939
+      Particle_Coin_Gold_9: 6475665078147278647
+      Particle_Coin_Gold_12: -3977642669879210344
+      Particle_Coin_Gold_3: 3290947039447085111
+      Particle_Coin_Gold_0: 7679513532445632118
+      Particle_Coin_Gold_8: 7513136986840861115
+      Particle_Coin_Gold_4: -6034617668155133823
+      Particle_Coin_Gold_14: -972509800648782445
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

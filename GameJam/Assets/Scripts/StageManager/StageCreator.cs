@@ -6,7 +6,7 @@ public class StageCreator : MonoBehaviour
 {
     private void Awake()
     {
-        StageSetting setting = StageManager.Instance.GetStageSetting(GameSceneManager.Instance.stageIndex);
+        StageSetting setting = StageManager.Instance.GetStageSetting();
 
         for (int i = 0; i < setting.createObjects.Length; i++)
         {

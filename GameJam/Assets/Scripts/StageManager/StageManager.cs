@@ -28,6 +28,11 @@ public class StageManager : MonoBehaviour
         }
     }
 
+    public StageSetting GetStageSetting()
+    {
+        return stageDictionary[GameSceneManager.Instance.stageIndex];
+    }
+
     public StageSetting GetStageSetting(int stageIndex)
     {
         return stageDictionary[stageIndex];

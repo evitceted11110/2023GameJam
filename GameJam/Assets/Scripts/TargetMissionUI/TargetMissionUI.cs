@@ -2,14 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Collectbench : MonoBehaviour
+public class TargetMissionUI : MonoBehaviour
 {
     public MergeSchedule productSchedulePrefab;
     public Transform root;
     public List<ItemBase> testCurProductID;
     public ItemBase testInjectItem;
     private List<ItemBase> productItems;
-    //private Dictionary<int, MergeSchedule> productSchedule = new Dictionary<int, MergeSchedule>();
+    private Dictionary<int, MergeSchedule> productSchedule = new Dictionary<int, MergeSchedule>();
     private List<int> remainingItems = new List<int>();
     public bool isLeft;
     private void Start()
@@ -19,6 +19,12 @@ public class Collectbench : MonoBehaviour
             SetProduct(stageSetting.leftProductItems);
         else
             SetProduct(stageSetting.rightProductItems);
+        CollectManager.Instance.InjectCompleteActionEvent(RefreshTargetUI);
+    }
+    
+    private void RefreshTargetUI(ItemBase item)
+    {
+        InjectItem(item);
     }
     public void SetProduct(List<ItemBase> items)
     {
@@ -26,14 +32,14 @@ public class Collectbench : MonoBehaviour
         remainingItems.Clear();
         foreach (ItemBase info in productItems)
         {
-            //MergeSchedule prodictItem = NewProductSchedule(info.itemID);
-            //prodictItem.inActiveSpriteRd.color = new Color(0.22f, 0.15f, 0.15f, 1);
-            //productSchedule.Add(info.itemID, prodictItem);
+            MergeSchedule prodictItem = NewProductSchedule(info.itemID);
+            prodictItem.inActiveSpriteRd.color = new Color(0.22f, 0.15f, 0.15f, 1);
+            productSchedule.Add(info.itemID, prodictItem);
             remainingItems.Add(info.itemID);
         }
     }
 
-    /*private MergeSchedule NewProductSchedule(int itemID)
+    private MergeSchedule NewProductSchedule(int itemID)
     {
         MergeSchedule obj = Instantiate(productSchedulePrefab, root);
         obj.inActiveSpriteRd.sprite = MergeIconService.Instance.GetMergeIcon(itemID).inActiveSp;
@@ -42,7 +48,7 @@ public class Collectbench : MonoBehaviour
         obj.activeSpriteRd.enabled = false;
         obj.itemID = itemID;
         return obj;
-    }*/
+    }
 
     public bool CheckEnableInject(ItemBase item)
     {
@@ -61,12 +67,11 @@ public class Collectbench : MonoBehaviour
             if (item.itemID == id)
             {
                 remainingItems.Remove(id);
-                //productSchedule[id].inActiveSpriteRd.enabled = false;
-                //productSchedule[id].activeSpriteRd.enabled = true;
+                productSchedule[id].inActiveSpriteRd.enabled = false;
+                productSchedule[id].activeSpriteRd.enabled = true;
                 break;
             }
         }
-        CollectManager.Instance.OnCollectedCheck(item);
         CheckCompleteMission();
     }
     private void CheckCompleteMission()
@@ -74,15 +79,11 @@ public class Collectbench : MonoBehaviour
         if (remainingItems.Count == 0)
         {
             //DestroyProductSchedule();
-            if (isLeft)
-                GameResultManager.Instance.IsLeftComplte = true;
-            else
-                GameResultManager.Instance.IsRightComplte = true;
             Debug.Log("Complete");
         }
     }
 
-    /*private void DestroyProductSchedule()
+    private void DestroyProductSchedule()
     {
         Dictionary<int, MergeSchedule> _productSchedule = new Dictionary<int, MergeSchedule>(productSchedule);
         foreach (KeyValuePair<int, MergeSchedule> item in _productSchedule)
@@ -90,7 +91,7 @@ public class Collectbench : MonoBehaviour
             Destroy(productSchedule[item.Key].gameObject);
         }
         productSchedule.Clear();
-    }*/
+    }
 
     [ContextMenu("InjectItem")]
     private void TestInjectItem()
@@ -108,10 +109,10 @@ public class Collectbench : MonoBehaviour
     [ContextMenu("RefreshProduct")]
     private void RefreshProduct()
     {
-        /*if (productSchedule.Count > 0)
+        if (productSchedule.Count > 0)
         {
             DestroyProductSchedule();
-        }*/
+        }
         SetProduct(testCurProductID);
     }
 }

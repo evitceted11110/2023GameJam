@@ -48,11 +48,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1ec5e6d85ab2644ab3cb066fdfe3b94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerPrefab: {fileID: 0}
-  playerControlSetting: {fileID: 0}
+  playerControlSetting: {fileID: 11400000, guid: 6cf70b461cafd6245affef685383c3db, type: 2}
   m_JumpForce: 400
   m_MovementSmoothing: 0.05
-  m_AirControl: 0
+  m_AirControl: 1
   m_WhatIsGround:
     serializedVersion: 2
     m_Bits: 64

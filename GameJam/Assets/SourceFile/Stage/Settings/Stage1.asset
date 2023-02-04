@@ -21,6 +21,7 @@ MonoBehaviour:
   - {fileID: 5511331038348374920, guid: 9ddc3f2aa18b36943811718d0e31fb10, type: 3}
   - {fileID: 2453774399747961899, guid: 27087505b8e95834da3e93f481eb68f8, type: 3}
   - {fileID: 8632341479961835282, guid: 6db1464cecfe9e2498e4f93e92da3bde, type: 3}
+  - {fileID: 8632341479961835282, guid: 036d10fda0ae7b64fa164dadf1513d67, type: 3}
   leftProductItems:
   - {fileID: 6629119574372320384, guid: 502cee33689355c4ca8186af0fad1d05, type: 3}
   rightProductItems:

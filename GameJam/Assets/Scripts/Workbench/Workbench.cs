@@ -13,18 +13,26 @@ public class Workbench : MonoBehaviour
     private int curProductID;
     private List<int> mergeItems;
     private List<int> remainingItems;
-    public ItemBase testCurProductID;
     public ItemBase testInjectItem;
     public float popForce;
     public float horizontalForce;
     public bool isLeft;
+    private int curMergeIndex = 0;
+    private List<ItemBase> totalMergeItems;
     private void Awake()
     {
         StageSetting stageSetting = StageManager.Instance.GetStageSetting();
         if (isLeft)
+        {
             SetProduct(stageSetting.leftProductItems[0]);
+            totalMergeItems = stageSetting.leftProductItems;
+        }
         else
+        {
             SetProduct(stageSetting.rightProductItems[0]);
+            totalMergeItems = stageSetting.rightProductItems;
+        }
+
     }
     public void SetProduct(ItemBase item)
     {
@@ -115,6 +123,18 @@ public class Workbench : MonoBehaviour
         mergeSchedule.Clear();
     }
 
+    [ContextMenu("ChangeMergerState")]
+    public void RequestChangeMergeState()
+    {
+        if (totalMergeItems.Count > 1)
+        {
+            curMergeIndex = (int)Mathf.Repeat(curMergeIndex + 1, mergeItems.Count);
+            RefreshProduct(totalMergeItems[curMergeIndex]);
+        }
+        else
+            Debug.Log("Cann't ChangeMergeState");
+    }
+
     [ContextMenu("InjectItem")]
     private void TestInjectItem()
     {
@@ -128,14 +148,16 @@ public class Workbench : MonoBehaviour
         }
     }
 
-    [ContextMenu("RefreshProduct")]
-    private void RefreshProduct()
+    private void RefreshProduct(ItemBase changeItem = null)
     {
         if (mergeSchedule.Count > 0)
         {
             DestroyMergeSchedule();
         }
-        SetProduct(testCurProductID);
+        if (changeItem != null)
+        {
+            SetProduct(changeItem);
+        }
     }
 
     public enum Symbol

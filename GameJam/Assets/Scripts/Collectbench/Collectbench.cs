@@ -2,16 +2,28 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Collectbench : MonoBehaviour
+public class Collectbench : MonoBehaviour,IHighLightable
 {
     public MergeSchedule productSchedulePrefab;
     public Transform root;
     public List<ItemBase> testCurProductID;
     public ItemBase testInjectItem;
     private List<ItemBase> productItems;
-    //private Dictionary<int, MergeSchedule> productSchedule = new Dictionary<int, MergeSchedule>();
+    public SpriteRenderer spriteRenderer;
+    private Material rendererMaterial
+    {
+        get
+        {
+            return spriteRenderer.sharedMaterial;
+        }
+    }
+
     private List<int> remainingItems = new List<int>();
     public bool isLeft;
+    private void Awake()
+    {
+        spriteRenderer.sharedMaterial = Material.Instantiate(spriteRenderer.sharedMaterial);
+    }
     private void Start()
     {
         StageSetting stageSetting = StageManager.Instance.GetStageSetting();
@@ -61,8 +73,10 @@ public class Collectbench : MonoBehaviour
             if (item.itemID == id)
             {
                 remainingItems.Remove(id);
-                //productSchedule[id].inActiveSpriteRd.enabled = false;
-                //productSchedule[id].activeSpriteRd.enabled = true;
+                item.OnRelese(0);
+                item.OnPickUp();
+                item.transform.position = transform.position;
+                item.OnConvert(() => { });
                 break;
             }
         }
@@ -113,5 +127,10 @@ public class Collectbench : MonoBehaviour
             DestroyProductSchedule();
         }*/
         SetProduct(testCurProductID);
+    }
+
+    public void SetHighLight(bool isHighLight)
+    {
+        rendererMaterial.SetFloat("_Brightness", isHighLight ? 2 : 0);
     }
 }

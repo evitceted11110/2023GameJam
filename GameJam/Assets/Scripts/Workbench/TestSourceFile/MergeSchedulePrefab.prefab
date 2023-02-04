@@ -39,7 +39,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2715783819854281296}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -72,8 +72,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -550813855
   m_SortingLayer: 3
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: dc8d841b616f85c4290ea809b40ac046, type: 3}
+  m_SortingOrder: 1
+  m_Sprite: {fileID: 21300000, guid: b445eb3655b1762479261a76f7136fd4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -157,7 +157,7 @@ SpriteRenderer:
   m_SortingLayerID: -550813855
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: caa1b98ffd000224ca472ede6d98445a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b445eb3655b1762479261a76f7136fd4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -230,5 +230,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42b9c3ef2ccdce045baa216e9fbe11ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  size: {x: 0, y: 0}
+  size: {x: 1, y: 1}
   sp: {fileID: 8524111190768868572}

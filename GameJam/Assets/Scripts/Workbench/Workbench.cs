@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
-using static UnityEditor.Progress;
 
 public class Workbench : MonoBehaviour
 {
@@ -26,9 +25,11 @@ public class Workbench : MonoBehaviour
     }
     public void SetProduct(ItemBase item)
     {
-        mergeSchedule.Clear();
-        mergeSchedule.Add(item.itemID, NewMergeSchedule(item.itemID));
         curProductID = item.itemID;
+        mergeSchedule.Clear();
+
+        mergeSchedule.Add(item.itemID, NewMergeSchedule(item.itemID));
+
         MergeSchedule equalSign = NewMergeSchedule((int)Symbol.Equl);
         mergeSchedule.Add(equalSign.GetHashCode(), equalSign);
 
@@ -36,8 +37,10 @@ public class Workbench : MonoBehaviour
         remainingItems = mergeTable.GetMergeItems(item.itemID);
         for(int i = 0; i < mergeItems.Count; i++)
         {
-            mergeSchedule.Add(mergeItems[i], NewMergeSchedule(mergeItems[i]));
-            if(i != mergeItems.Count - 1)
+            MergeSchedule mergeItem = NewMergeSchedule(mergeItems[i]);
+            mergeSchedule.Add(mergeItems[i], mergeItem);
+            mergeItem.inActiveSpriteRd.color = new Color(0.22f, 0.15f, 0.15f, 1);
+            if (i != mergeItems.Count - 1)
             {
                 MergeSchedule plusSign = NewMergeSchedule((int)Symbol.plus);
                 mergeSchedule.Add(plusSign.GetHashCode(), plusSign);
@@ -104,7 +107,14 @@ public class Workbench : MonoBehaviour
     [ContextMenu("InjectItem")]
     private void TestInjectItem()
     {
-        InjectItem(testInjectItem);
+        if(CheckEnableInject(testInjectItem))
+        {
+            InjectItem(testInjectItem);
+        }
+        else
+        {
+            Debug.Log("Cann't Inject");
+        }
     }
 
     [ContextMenu("RefreshProduct")]

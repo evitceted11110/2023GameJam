@@ -71,6 +71,7 @@ public class ItemBase : IPoolable, IItem
     }
     public void OnConvert(Action onComplete)
     {
+        KillTween();
         pickAble = false;
         DOVirtual.Float(0, 1, convertDuration, (value) =>
          {
@@ -102,6 +103,7 @@ public class ItemBase : IPoolable, IItem
     public void ResetItem()
     {
         transform.localScale = originScale;
+        KillTween();
     }
 
     [ContextMenu("Test")]

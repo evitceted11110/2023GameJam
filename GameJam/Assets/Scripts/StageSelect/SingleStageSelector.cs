@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class SingleStageSelector : MonoBehaviour
 {
-
+    public int index;
     public void OnClicked()
     {
-        GameSceneManager.Instance.SelectStage(0);
+        GameSceneManager.Instance.SelectStage(index);
     }
 }

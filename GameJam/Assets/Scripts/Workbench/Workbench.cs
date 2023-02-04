@@ -6,7 +6,6 @@ using UnityEngine;
 
 public class Workbench : MonoBehaviour
 {
-    public MergeTable mergeTable;
     private Dictionary<int, MergeSchedule> mergeSchedule = new Dictionary<int, MergeSchedule>();
     public MergeSchedule mergeSchedulePrefab;
     public Transform root;
@@ -17,10 +16,6 @@ public class Workbench : MonoBehaviour
     public ItemBase testInjectItem;
     public float popForce;
     public float horizontalForce;
-    private void OnEnable()
-    {
-        mergeTable.InitTable();
-    }
     public void SetProduct(ItemBase item)
     {
         curProductID = item.itemID;
@@ -30,8 +25,8 @@ public class Workbench : MonoBehaviour
         MergeSchedule equalSign = NewMergeSchedule((int)Symbol.Equl);
         mergeSchedule.Add(equalSign.GetHashCode(), equalSign);
 
-        mergeItems = mergeTable.GetMergeItems(item.itemID);
-        remainingItems = mergeTable.GetMergeItems(item.itemID);
+        mergeItems = MergeTableService.mergeTable[item.itemID];
+        remainingItems = MergeTableService.mergeTable[item.itemID];
         for (int i = 0; i < mergeItems.Count; i++)
         {
             MergeSchedule mergeItem = NewMergeSchedule(mergeItems[i]);

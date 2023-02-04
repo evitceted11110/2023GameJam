@@ -26,7 +26,7 @@ public class MergeTable : ScriptableObject
     {
         if (mergeTable == null)
             InitTable();
-        return mergeTable[productID];
+        return new List<int>(mergeTable[productID]);
     }
 
 }

@@ -7,7 +7,7 @@ using UnityEngine;
 public class Workbench : MonoBehaviour
 {
     public MergeTable mergeTable;
-    private Dictionary<int , MergeSchedule> mergeSchedule = new Dictionary<int, MergeSchedule>();
+    private Dictionary<int, MergeSchedule> mergeSchedule = new Dictionary<int, MergeSchedule>();
     public MergeSchedule mergeSchedulePrefab;
     public Transform root;
     private int curProductID;
@@ -24,7 +24,6 @@ public class Workbench : MonoBehaviour
     public void SetProduct(ItemBase item)
     {
         curProductID = item.itemID;
-        mergeSchedule.Clear();
 
         mergeSchedule.Add(item.itemID, NewMergeSchedule(item.itemID));
 
@@ -33,7 +32,7 @@ public class Workbench : MonoBehaviour
 
         mergeItems = mergeTable.GetMergeItems(item.itemID);
         remainingItems = mergeTable.GetMergeItems(item.itemID);
-        for(int i = 0; i < mergeItems.Count; i++)
+        for (int i = 0; i < mergeItems.Count; i++)
         {
             MergeSchedule mergeItem = NewMergeSchedule(mergeItems[i]);
             mergeSchedule.Add(mergeItems[i], mergeItem);
@@ -60,7 +59,7 @@ public class Workbench : MonoBehaviour
     {
         foreach (int id in remainingItems)
         {
-            if(id == item.itemID)
+            if (id == item.itemID)
                 return true;
         }
         return false;
@@ -68,12 +67,15 @@ public class Workbench : MonoBehaviour
 
     public void InjectItem(ItemBase item)
     {
-        foreach(int id in remainingItems)
+        foreach (int id in remainingItems)
         {
-            remainingItems.Remove(item.itemID);
-            mergeSchedule[id].inActiveSpriteRd.enabled = false;
-            mergeSchedule[id].activeSpriteRd.enabled = true;
-            break;
+            if (item.itemID == id)
+            {
+                remainingItems.Remove(id);
+                mergeSchedule[id].inActiveSpriteRd.enabled = false;
+                mergeSchedule[id].activeSpriteRd.enabled = true;
+                break;
+            }
         }
         CheckStartMerge();
     }
@@ -94,18 +96,24 @@ public class Workbench : MonoBehaviour
 
     private void CompleteMerge()
     {
+        DestroyMergeSchedule();
+        Debug.Log("Complete");
+    }
+
+    private void DestroyMergeSchedule()
+    {
         Dictionary<int, MergeSchedule> _mergeSchedule = new Dictionary<int, MergeSchedule>(mergeSchedule);
         foreach (KeyValuePair<int, MergeSchedule> item in _mergeSchedule)
         {
-            Destroy(mergeSchedule[item.Key]);
+            Destroy(mergeSchedule[item.Key].gameObject);
         }
-        Debug.Log("Complete");
+        mergeSchedule.Clear();
     }
 
     [ContextMenu("InjectItem")]
     private void TestInjectItem()
     {
-        if(CheckEnableInject(testInjectItem))
+        if (CheckEnableInject(testInjectItem))
         {
             InjectItem(testInjectItem);
         }
@@ -118,6 +126,10 @@ public class Workbench : MonoBehaviour
     [ContextMenu("RefreshProduct")]
     private void RefreshProduct()
     {
+        if (mergeSchedule.Count > 0)
+        {
+            DestroyMergeSchedule();
+        }
         SetProduct(testCurProductID);
     }
 

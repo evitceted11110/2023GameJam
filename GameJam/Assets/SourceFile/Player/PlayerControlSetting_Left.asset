@@ -20,4 +20,4 @@ MonoBehaviour:
   talkKey: v
   moveSpeed: 0.15
   jumpHeight: 20
-  throwStrength: 150
+  throwStrength: 200

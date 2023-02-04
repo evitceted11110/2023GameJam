@@ -77,8 +77,7 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        if (currentPickingItem != null)
-            return;
+
         Collider2D[] forwardColliders = Physics2D.OverlapCircleAll(m_ForwardCheck.position, k_ForwardRadius);
 
         //前方有物品 優先拿取
@@ -133,18 +132,36 @@ public class PlayerController : MonoBehaviour
         {
             if (colliders[i].gameObject != gameObject)
             {
-                var item = colliders[i].GetComponent<ItemBase>();
-                if (item != null)
+                if (currentPickingItem != null)
                 {
-                    HighLightManager.Instance.SetHighLight(this, item);
-                    return true;
+                    //如果手上有素材，只能跟工作台與收集台互動
+                    var collectBench = colliders[i].GetComponent<Collectbench>();
+                    if (collectBench != null)
+                    {
+                        if (collectBench.CheckEnableInject(currentPickingItem))
+                        {
+                            HighLightManager.Instance.SetHighLight(this, collectBench);
+                            return true;
+                        }
+                    }
+                    
                 }
-
-                var itemBox = colliders[i].GetComponent<ItemBox>();
-                if (itemBox != null)
+                else
                 {
-                    HighLightManager.Instance.SetHighLight(this, itemBox);
-                    return true;
+                    var item = colliders[i].GetComponent<ItemBase>();
+                    if (item != null)
+                    {
+                        HighLightManager.Instance.SetHighLight(this, item);
+                        return true;
+                    }
+
+                    var itemBox = colliders[i].GetComponent<ItemBox>();
+                    if (itemBox != null)
+                    {
+                        HighLightManager.Instance.SetHighLight(this, itemBox);
+                        return true;
+                    }
+
                 }
             }
         }
@@ -193,14 +210,24 @@ public class PlayerController : MonoBehaviour
 
     private void DoAction()
     {
+        var item = HighLightManager.Instance.GetHighLightItem(this);
         if (currentPickingItem != null)
         {
             //手上有物品
-            DoThrowItem();
+            if (item != null && item.GetType() == typeof(Collectbench))
+            {
+                Collectbench collectbench = item as Collectbench;
+                collectbench.InjectItem(currentPickingItem);
+                currentPickingItem = null;
+            }
+            else
+            {
+                DoThrowItem();
+
+            }
             return;
         }
 
-        var item = HighLightManager.Instance.GetHighLightItem(this);
         if (item != null && item.GetType() == typeof(ItemBase))
         {
             DoPickItem(item as ItemBase);

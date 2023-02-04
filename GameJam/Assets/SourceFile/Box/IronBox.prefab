@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3175067779641733904}
   - component: {fileID: 3175067779641733905}
   m_Layer: 0
-  m_Name: BoneBox
+  m_Name: IronBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 574998be693d7c4459fb43f9a3e46d42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemID: 1001
+  itemID: 1002
   popForce: 50
   horizontalForce: 25
 --- !u!212 &3175067779641733905
@@ -89,7 +89,7 @@ SpriteRenderer:
   m_SortingLayerID: -1191738297
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: fcb47a3b2659ed744817bcc9d4239701, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 526b8e35b47e32948b780f58aaa789f3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

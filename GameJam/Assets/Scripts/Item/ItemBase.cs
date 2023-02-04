@@ -69,6 +69,10 @@ public class ItemBase : IPoolable, IItem
     private void OnEnable()
     {
         pickAble = true;
+        forceHightLight = false;
+        itemCollider.enabled = true;
+        rigid2D.simulated = true;
+        SetHighLight(false);
         DoDisappearTimer();
     }
     public void OnConvert(Action onComplete)

@@ -9,5 +9,5 @@ public class MergeMaterialList
 public class MergeMaterial
 {
     public int ITEM_ID;
-    public int[] FORMULA;
+    public string ITEM_FORMULA;
 }

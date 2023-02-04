@@ -14,10 +14,10 @@ public class MergeTable : ScriptableObject
         var mergeMaterial = JsonConvert.DeserializeObject<MergeMaterial[]>(mergeTableJson.text);
         foreach (MergeMaterial info in mergeMaterial)
         {
-            if (info.FORMULA != null)
+            if (!string.IsNullOrEmpty(info.ITEM_FORMULA))
             {
-                //int[] FORMULA = JsonConvert.DeserializeObject<int[]>(info.FORMULA);
-                mergeTable.Add(info.ITEM_ID, info.FORMULA.ToList());
+                int[] FORMULA = JsonConvert.DeserializeObject<int[]>(info.ITEM_FORMULA);
+                mergeTable.Add(info.ITEM_ID, FORMULA.ToList());
             }
         }
     }

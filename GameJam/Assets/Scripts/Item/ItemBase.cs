@@ -58,9 +58,10 @@ public class ItemBase : IPoolable, IItem
     [SerializeField]
     private float convertDuration = 1f;
     private bool forceHightLight;
-
+    private Vector3 originScale;
     private void Awake()
     {
+        originScale = this.transform.localScale;
         spriteRenderer.sharedMaterial = Material.Instantiate(spriteRenderer.sharedMaterial);
     }
     private void OnEnable()
@@ -73,7 +74,7 @@ public class ItemBase : IPoolable, IItem
         pickAble = false;
         DOVirtual.Float(0, 1, convertDuration, (value) =>
          {
-             transform.localScale = Vector3.one * Mathf.Lerp(1, 0, value);
+             transform.localScale = originScale * Mathf.Lerp(1, 0, value);
              transform.localEulerAngles = transform.forward * Mathf.Lerp(0, 360 * 2, value);
          }).OnComplete(() =>
          {

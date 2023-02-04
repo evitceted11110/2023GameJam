@@ -1289,8 +1289,8 @@ TextureImporter:
       Particle_Glow_03: 6132981578764917095
       Particle_Circle1_Purple: -2271459148336298832
       Particle_Circle_00: 7334740413766208955
-      Particle_Circle2_Yellow: 1316597753031454527
       UI_Particle_Glow3_Green: -3034127582043576851
+      Particle_Circle2_Yellow: 1316597753031454527
       UI_Particle_Glow1_Blue: -6124126802122654356
       Particle_Circle1_Red: -5243033045666791423
       UI_Particle_Glow1_Yellow: -5930563895721080995
@@ -1312,8 +1312,8 @@ TextureImporter:
       Particle_Glow_01: -1041781071796713950
       UI_Particle_Glow3_Blue: 5501445750197722803
       UI_Particle_Glow3_Orange: -5854954134390612803
-      Particle_Shine_01: 778114804859563604
       UI_Particle_Glow3_Purple: -8738550049803644615
+      Particle_Shine_01: 778114804859563604
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

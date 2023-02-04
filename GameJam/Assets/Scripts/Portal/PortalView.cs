@@ -4,25 +4,33 @@ using UnityEngine;
 
 public class PortalView : MonoBehaviour
 {
-    public int toRightID;
-    public int toLeftID;
+    public ProtalTransItemData leftItemData;
+    public ProtalTransItemData rightItemData;
 
-    public PortalAbsorber leftAbsorber;
-    public PortalAbsorber rightAbsorber;
     public float genForce;
     private void Awake()
     {
-        leftAbsorber.onAbsor = ConvertToRight;
-        rightAbsorber.onAbsor = ConvertToLeft;
+        leftItemData.absorber.onAbsor = ConvertToRight;
+        rightItemData.absorber.onAbsor = ConvertToLeft;
+    }
+
+    public void SetRightID()
+    {
+
+    }
+
+    public void SetLeftID()
+    {
+
     }
 
     private void ConvertToRight(PortalAbsorber absorber, ItemBase item)
     {
-        OnConvertObject(item, toRightID, rightAbsorber.throwTransform, genForce);
+        OnConvertObject(item, rightItemData.toID, rightItemData.absorber.throwTransform, genForce);
     }
     private void ConvertToLeft(PortalAbsorber absorber, ItemBase item)
     {
-        OnConvertObject(item, toLeftID, leftAbsorber.throwTransform, -genForce);
+        OnConvertObject(item, leftItemData.toID, leftItemData.absorber.throwTransform, -genForce);
     }
     public void OnConvertObject(ItemBase fromItem, int targetID, Transform genTransform, float force)
     {
@@ -34,6 +42,12 @@ public class PortalView : MonoBehaviour
             convertItem.OnRelese(force);
         });
     }
+}
 
-
+[System.Serializable]
+public class ProtalTransItemData
+{
+    public int toID;
+    public SpriteRenderer iconRenderer;
+    public PortalAbsorber absorber;
 }

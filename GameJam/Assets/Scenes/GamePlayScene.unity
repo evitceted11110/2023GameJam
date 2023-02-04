@@ -301,6 +301,30 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &714165715 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2216007267263591862, guid: f71cf9f703762004e9986226ea022e79, type: 3}
+  m_PrefabInstance: {fileID: 2574141675605861968}
+  m_PrefabAsset: {fileID: 0}
+--- !u!251 &714165717
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 714165715}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 1
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 146.4
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
 --- !u!1 &1817361821
 GameObject:
   m_ObjectHideFlags: 0
@@ -397,6 +421,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6182192861144214350, guid: f71cf9f703762004e9986226ea022e79, type: 3}
+      propertyPath: m_UsedByEffector
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7313884047416475438, guid: f71cf9f703762004e9986226ea022e79, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 168fc305a9185324ca1cf114e2a03fd2, type: 3}
     - target: {fileID: 9072973738503976231, guid: f71cf9f703762004e9986226ea022e79, type: 3}
       propertyPath: m_Name
       value: GamePlayStage

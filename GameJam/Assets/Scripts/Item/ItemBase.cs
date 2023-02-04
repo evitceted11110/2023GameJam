@@ -9,7 +9,7 @@ public class ItemBase : IPoolable, IItem
     public int itemID;
     public bool pickAble { get; private set; }
     private Collider2D _collider2D;
-    public new Collider2D collider2D
+    public Collider2D itemCollider
     {
         get
         {
@@ -88,7 +88,7 @@ public class ItemBase : IPoolable, IItem
         KillTween();
         forceHightLight = true;
         rigid2D.simulated = false;
-        collider2D.enabled = false;
+        itemCollider.enabled = false;
     }
 
     public void SetHighLight(bool isHighLight)
@@ -114,7 +114,7 @@ public class ItemBase : IPoolable, IItem
         DoDisappearTimer();
         transform.parent = GetManagerRoot();
         forceHightLight = false;
-        collider2D.enabled = true;
+        itemCollider.enabled = true;
         rigid2D.simulated = true;
         SetHighLight(false);
         rigid2D.AddForce(new Vector2(force, 0));

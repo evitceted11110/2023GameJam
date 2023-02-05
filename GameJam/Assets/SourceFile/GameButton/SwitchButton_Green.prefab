@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4571333936698443607}
   - component: {fileID: 6608643291802609674}
   m_Layer: 0
-  m_Name: SwitchButton
+  m_Name: SwitchButton_Green
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 1090893637
   m_SortingLayer: 2
   m_SortingOrder: 5
-  m_Sprite: {fileID: 21300000, guid: 0eb2daa8b2285b045ae9542f872d9900, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 283004eb0fefce84e95cf66e362ffcfa, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -99,8 +99,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonRenderer: {fileID: 7218480663005863621}
-  pressSprite: {fileID: 21300000, guid: b2a3c755ec9d04d469f8af2da66a4a90, type: 3}
-  releaseSprite: {fileID: 21300000, guid: 0eb2daa8b2285b045ae9542f872d9900, type: 3}
+  pressSprite: {fileID: 21300000, guid: bd54052f7734d3745bff1138e56caa32, type: 3}
+  releaseSprite: {fileID: 21300000, guid: 283004eb0fefce84e95cf66e362ffcfa, type: 3}
 --- !u!61 &6608643291802609674
 BoxCollider2D:
   m_ObjectHideFlags: 0

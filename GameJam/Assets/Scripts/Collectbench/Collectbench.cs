@@ -81,6 +81,8 @@ public class Collectbench : MonoBehaviour,IHighLightable
                 break;
             }
         }
+        AudioManagerScript.Instance.PlayAudioClip(AudioClipConst.CollectBench_In);
+
         CollectManager.Instance.OnCollectedCheck(item, isLeft);
         CheckCompleteMission();
     }
@@ -89,6 +91,8 @@ public class Collectbench : MonoBehaviour,IHighLightable
         if (remainingItems.Count == 0)
         {
             workBenchAni.Play("Right_People_Finish");
+            AudioManagerScript.Instance.PlayAudioClip(AudioClipConst.CollectBenchFinish);
+
             //DestroyProductSchedule();
             if (isLeft)
                 GameResultManager.Instance.IsLeftComplte = true;

@@ -105,6 +105,8 @@ public class Workbench : MonoBehaviour, IHighLightable
                 break;
             }
         }
+        AudioManagerScript.Instance.PlayAudioClip(AudioClipConst.WorkBench_In);
+
         CheckStartMerge();
     }
     private void CheckStartMerge()
@@ -117,6 +119,7 @@ public class Workbench : MonoBehaviour, IHighLightable
         var item = ItemManager.Instance.GetItem(curProductID);
         item.transform.position = this.transform.position + (Vector3.up * 0.1f);
         item.rigid2D.AddForce(new Vector2(UnityEngine.Random.Range(-horizontalForce, horizontalForce), popForce));
+        AudioManagerScript.Instance.PlayAudioClip(AudioClipConst.WorkBench_Out);
 
         CompleteMerge();
     }

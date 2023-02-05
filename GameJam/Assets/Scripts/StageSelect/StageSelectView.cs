@@ -6,6 +6,10 @@ using Newtonsoft.Json;
 public class StageSelectView : MonoBehaviour
 {
     public SingleStageSelector[] stageButtonList;
+    private void Start()
+    {
+        AudioManagerScript.Instance.CoverPlayAudioClip(AudioClipConst.Home_BGM);
+    }
     private void OnEnable()
     {
         InitStageButtonDateSetup();

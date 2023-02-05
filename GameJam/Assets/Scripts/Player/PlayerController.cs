@@ -229,6 +229,7 @@ public class PlayerController : MonoBehaviour
             jumpTimer = 0;
             // Add a vertical force to the player.
             m_Grounded = false;
+            AudioManagerScript.Instance.PlayAudioClip(AudioClipConst.Jump);
             m_Rigidbody2D.AddForce(new Vector2(0f, playerControlSetting.jumpHeight));
         }
     }
@@ -292,6 +293,8 @@ public class PlayerController : MonoBehaviour
         animator.SetBool(ANIMATOR_HAS_ITEM, false);
         currentPickingItem.OnRelese(m_FacingRight ? playerControlSetting.throwStrength : -playerControlSetting.throwStrength);
         currentPickingItem = null;
+        AudioManagerScript.Instance.PlayAudioClip(AudioClipConst.Threw);
+
     }
 
     private void DoPickItem(ItemBase item)
@@ -301,5 +304,7 @@ public class PlayerController : MonoBehaviour
         item.transform.parent = pickItemTransform;
         item.transform.localPosition = Vector3.zero;
         currentPickingItem = item;
+        AudioManagerScript.Instance.PlayAudioClip(AudioClipConst.Pick);
+
     }
 }

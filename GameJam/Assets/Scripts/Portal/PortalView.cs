@@ -66,12 +66,16 @@ public class PortalView : MonoBehaviour
     }
     public void OnConvertObject(ItemBase fromItem, int targetID, Transform genTransform, float force)
     {
+        AudioManagerScript.Instance.PlayAudioClip(AudioClipConst.Portal_In);
+
         fromItem.OnPickUp();
         fromItem.OnConvert(() =>
         {
             var convertItem = ItemManager.Instance.GetItem(targetID);
             convertItem.transform.position = genTransform.position;
             convertItem.OnRelese(force);
+            AudioManagerScript.Instance.PlayAudioClip(AudioClipConst.Portal_Out);
+
         });
     }
 }

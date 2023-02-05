@@ -8,7 +8,7 @@ public class UIPauseView : MonoBehaviour
     public void SetActive(bool active)
     {
         gameObject.SetActive(active);
-
+        AudioManagerScript.Instance.PlayAudioClip(AudioClipConst.ButtonCancel);
     }
 
     public void Show()

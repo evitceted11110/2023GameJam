@@ -26,6 +26,8 @@ public class UICompleteView : MonoBehaviour
 
     public void Show()
     {
+        AudioManagerScript.Instance.PlayAudioClip(AudioClipConst.Finish);
+
         var stageSetting = StageManager.Instance.GetStageSetting();
         bool[] resultStar = stageSetting.GetStarResult(GameResultManager.Instance.useTime);
         for (int i = 0; i < starImages.Length; i++)
@@ -45,6 +47,8 @@ public class UICompleteView : MonoBehaviour
 
     public void OnCompelteClick()
     {
+        AudioManagerScript.Instance.PlayAudioClip(AudioClipConst.ButtonConfirm);
+
         GameSceneManager.Instance.BackToStageSelect();
     }
 }

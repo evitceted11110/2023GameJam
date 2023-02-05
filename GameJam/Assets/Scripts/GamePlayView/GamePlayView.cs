@@ -42,6 +42,9 @@ public class GamePlayView : MonoBehaviour
 
     private void Awake()
     {
+        //AudioManagerScript.Instance.Stop(AudioClipConst.Home_BGM);
+
+        AudioManagerScript.Instance.CoverPlayAudioClip(AudioClipConst.Game_BGM);
     }
 
     void OnGameStateChange(GameState state)
@@ -60,14 +63,17 @@ public class GamePlayView : MonoBehaviour
 
     public void GameStartClick()
     {
+        AudioManagerScript.Instance.PlayAudioClip(AudioClipConst.ButtonConfirm);
         GameResultManager.Instance.SetGameState(GameState.PLAYING);
     }
     public void ResumeClick()
     {
+        AudioManagerScript.Instance.PlayAudioClip(AudioClipConst.ButtonConfirm);
         GameResultManager.Instance.SetGameState(GameState.PLAYING);
     }
     public void ExitClick()
     {
+        AudioManagerScript.Instance.PlayAudioClip(AudioClipConst.ButtonConfirm);
         GameSceneManager.Instance.BackToStageSelect();
     }
 

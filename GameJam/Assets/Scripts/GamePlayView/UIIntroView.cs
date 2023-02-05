@@ -6,21 +6,29 @@ using UnityEngine.UI;
 public class UIIntroView : MonoBehaviour
 {
     [SerializeField]
-    private Image leftTargetImage;
+    private Image[] leftTargetImages;
     [SerializeField]
-    private Image rightTargetImage;
+    private Image[] rightTargetImages;
 
     private void Start()
     {
         var stateSetting = StageManager.Instance.GetStageSetting();
-        SetTarget(leftTargetImage, stateSetting.leftProductItems);
-        SetTarget(rightTargetImage, stateSetting.rightProductItems);
+        SetTarget(leftTargetImages, stateSetting.leftProductItems);
+        SetTarget(rightTargetImages, stateSetting.rightProductItems);
     }
-    public void SetTarget(Image targetImage, List<ItemBase> items)
+    public void SetTarget(Image[] targetImages, List<ItemBase> items)
     {
-        for (int i = 0; i < items.Count; i++)
+        for (int i = 0; i < targetImages.Length; i++)
         {
-            targetImage.sprite = MergeIconService.Instance.GetMergeIcon(items[i].itemID).activeSp;
+            if (i < items.Count)
+            {
+                targetImages[i].sprite = MergeIconService.Instance.GetMergeIcon(items[i].itemID).activeSp;
+                targetImages[i].gameObject.SetActive(true);
+            }
+            else
+            {
+                targetImages[i].gameObject.SetActive(false);
+            }
         }
     }
 

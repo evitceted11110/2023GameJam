@@ -12,6 +12,9 @@ public class UICompleteView : MonoBehaviour
 
     public Image[] starImages;
 
+    public GameObject successRoot;
+    public GameObject failRoot;
+
     public TextMeshProUGUI timeResultText;
     public void ShowResult(float useTime)
     { }
@@ -36,6 +39,10 @@ public class UICompleteView : MonoBehaviour
         }
         TimeSpan time = TimeSpan.FromSeconds(GameResultManager.Instance.useTime);
         timeResultText.text = string.Format("{0}:{1}", time.Minutes.ToString("00"), time.Seconds.ToString("00"));
+
+        successRoot.SetActive(GameResultManager.Instance.remainTime > 0);
+        failRoot.SetActive(GameResultManager.Instance.remainTime <= 0);
+
         gameObject.SetActive(true);
         PlayerPrefsService.Instance.SavedUseTime(GameSceneManager.Instance.stageIndex, GameResultManager.Instance.useTime);
     }

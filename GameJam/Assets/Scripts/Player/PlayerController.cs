@@ -31,9 +31,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private Transform m_ForwardCheck;                           // A position marking where to check if the player is grounded.
     const float k_ForwardRadius = .2f; // Radius of the overlap circle to determine if grounded
-
-
-
     private bool m_Grounded;            // Whether or not the player is grounded.
     const float k_CeilingRadius = .2f; // Radius of the overlap circle to determine if the player can stand up
     private Rigidbody2D m_Rigidbody2D;
@@ -56,11 +53,17 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         m_Rigidbody2D = GetComponent<Rigidbody2D>();
+        GameResultManager.Instance.onGameStateChange += OnGameStateChange;
     }
 
+    private void OnDestroy()
+    {
+        GameResultManager.Instance.onGameStateChange -= OnGameStateChange;
+    }
     private void Update()
     {
-        InputDetect();
+        if (GameResultManager.Instance.gameState == GameState.PLAYING)
+            InputDetect();
     }
 
     private void FixedUpdate()
@@ -87,6 +90,30 @@ public class PlayerController : MonoBehaviour
         }
 
     }
+
+    void OnGameStateChange(GameState state)
+    {
+        switch (state)
+        {
+            case GameState.PAUSE:
+                OnPause();
+                break;
+            case GameState.PLAYING:
+                OnResume();
+                break;
+        }
+    }
+
+    private void OnPause()
+    {
+        m_Rigidbody2D.simulated = false;
+    }
+
+    private void OnResume()
+    {
+        m_Rigidbody2D.simulated = true;
+    }
+
 
     private void AddTimer()
     {
@@ -144,7 +171,7 @@ public class PlayerController : MonoBehaviour
                             return true;
                         }
                     }
-                    
+
                 }
                 else
                 {

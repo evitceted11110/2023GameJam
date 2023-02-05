@@ -59,6 +59,7 @@ public class ItemBase : IPoolable, IItem, IHighLightable
     private Tween disappearTween;
     [SerializeField]
     private float convertDuration = 1f;
+    private Tween convertTween;
     private bool forceHightLight;
     private Vector3 originScale;
     private void Awake()
@@ -74,21 +75,71 @@ public class ItemBase : IPoolable, IItem, IHighLightable
         rigid2D.simulated = true;
         SetHighLight(false);
         DoDisappearTimer();
+
+        GameResultManager.Instance.onGameStateChange += OnGameStateChange;
+
     }
+
+    private void OnDisable()
+    {
+        GameResultManager.Instance.onGameStateChange -= OnGameStateChange;
+
+    }
+
     public void OnConvert(Action onComplete)
     {
         KillTween();
         pickAble = false;
-        DOVirtual.Float(0, 1, convertDuration, (value) =>
-         {
-             transform.localScale = originScale * Mathf.Lerp(1, 0, value);
-             transform.localEulerAngles = transform.forward * Mathf.Lerp(0, 360 * 2, value);
-         }).OnComplete(() =>
-         {
-             onComplete();
-             ResetItem();
-             Dispose();
-         });
+        convertTween = DOVirtual.Float(0, 1, convertDuration, (value) =>
+          {
+              transform.localScale = originScale * Mathf.Lerp(1, 0, value);
+              transform.localEulerAngles = transform.forward * Mathf.Lerp(0, 360 * 2, value);
+          }).OnComplete(() =>
+          {
+              onComplete();
+              ResetItem();
+              Dispose();
+              KillTween();
+          });
+    }
+
+    void OnGameStateChange(GameState state)
+    {
+        switch (state)
+        {
+            case GameState.PAUSE:
+                OnPause();
+                break;
+            case GameState.PLAYING:
+                OnResume();
+                break;
+        }
+    }
+
+    private void OnPause()
+    {
+        if (convertTween != null)
+        {
+            convertTween.Pause();
+        }
+        if (disappearTween != null)
+        {
+            disappearTween.Pause();
+        }
+        rigid2D.simulated = false;
+    }
+
+    private void OnResume()
+    {
+        if (convertTween != null)
+        {
+            convertTween.Play();
+        }
+        if (disappearTween != null)
+        {
+            disappearTween.Play();
+        }
+        rigid2D.simulated = true;
     }
 
     public void OnPickUp()
@@ -146,7 +197,11 @@ public class ItemBase : IPoolable, IItem, IHighLightable
         if (disappearTween != null)
             disappearTween.Kill();
         disappearTween = null;
+
+        if (convertTween != null)
+            convertTween.Kill();
+        convertTween = null;
     }
 
-    
+
 }

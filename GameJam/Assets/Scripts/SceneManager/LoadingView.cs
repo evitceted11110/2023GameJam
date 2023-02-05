@@ -21,6 +21,10 @@ public class LoadingView : MonoBehaviour
     private void Start()
     {
         pressToStartObject.SetActive(false);
+        if (GameSceneManager.Instance.NextScene == GameSceneManager.GAME_SCENE)
+        {
+            GameResultManager.Instance.ResetManager();
+        }
         StartCoroutine(LoadScene());
     }
 

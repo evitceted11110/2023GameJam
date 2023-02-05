@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 public class StageSelectView : MonoBehaviour
 {
     public SingleStageSelector[] stageButtonList;
-    private void Awake()
+    private void OnEnable()
     {
         InitStageButtonDateSetup();
     }

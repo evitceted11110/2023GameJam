@@ -95,6 +95,7 @@ MonoBehaviour:
   jumpTimeThreshole: 0.05
   actionThreshole: 0.05
   pickItemTransform: {fileID: 9003783358719255272}
+  isDebug: 0
 --- !u!50 &225667181225278345
 Rigidbody2D:
   serializedVersion: 4
@@ -246,7 +247,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1090893637
   m_SortingLayer: 2
-  m_SortingOrder: 0
+  m_SortingOrder: 4
   m_Sprite: {fileID: 21300000, guid: f9bffff8e9f5b0245bd4cf2e116fa557, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

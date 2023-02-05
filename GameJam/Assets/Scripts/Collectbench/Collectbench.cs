@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Collectbench : MonoBehaviour,IHighLightable
+public class Collectbench : MonoBehaviour, IHighLightable
 {
     public MergeSchedule productSchedulePrefab;
     public Transform root;
@@ -81,8 +81,10 @@ public class Collectbench : MonoBehaviour,IHighLightable
                 break;
             }
         }
-        AudioManagerScript.Instance.PlayAudioClip(AudioClipConst.CollectBench_In);
 
+        GameResultManager.Instance.SetCompleteProduct(isLeft, item);
+
+        AudioManagerScript.Instance.PlayAudioClip(AudioClipConst.CollectBench_In);
         CollectManager.Instance.OnCollectedCheck(item, isLeft);
         CheckCompleteMission();
     }

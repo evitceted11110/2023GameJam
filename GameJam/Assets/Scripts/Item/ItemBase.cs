@@ -69,6 +69,7 @@ public class ItemBase : IPoolable, IItem, IHighLightable
     }
     private void OnEnable()
     {
+        ResetItem();
         pickAble = true;
         forceHightLight = false;
         itemCollider.enabled = true;

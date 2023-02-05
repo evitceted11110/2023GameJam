@@ -6,25 +6,57 @@ using UnityEngine.UI;
 public class UITargetView : MonoBehaviour
 {
     [SerializeField]
-    private Image leftTargetImage;
+    private Image[] leftTargetImages;
     [SerializeField]
-    private Image rightTargetImage;
+    private Image[] rightTargetImages;
 
     private void Start()
     {
-        var stateSetting = StageManager.Instance.GetStageSetting();
-        SetTarget(leftTargetImage, stateSetting.leftProductItems);
-        SetTarget(rightTargetImage, stateSetting.rightProductItems);
+        GameResultManager.Instance.onProductComplete += OnProductUpdate;
+        OnProductUpdate();
     }
-    public void SetTarget(Image targetImage, List<ItemBase> items)
+    public void SetTarget(Image[] targetImage, List<ItemBase> requireItems, List<ItemBase> completeItems)
     {
-        for (int i = 0; i < items.Count; i++)
+        List<int> completeIDs = new List<int>();
+        for (int i = 0; i < completeItems.Count; i++)
         {
-            targetImage.sprite = MergeIconService.Instance.GetMergeIcon(items[i].itemID).activeSp;
+            completeIDs.Add(completeItems[i].itemID);
+        }
+
+        for (int i = 0; i < targetImage.Length; i++)
+        {
+            if (i < requireItems.Count)
+            {
+                targetImage[i].sprite = MergeIconService.Instance.GetMergeIcon(requireItems[i].itemID).activeSp;
+
+                if (completeIDs.Contains(requireItems[i].itemID))
+                {
+                    completeIDs.Remove(i);
+                    targetImage[i].color = Color.white;
+                }
+                else
+                {
+                    targetImage[i].color = new Color(0.22f, 0.15f, 0.15f, 1);
+                }
+
+                targetImage[i].gameObject.SetActive(true);
+            }
+            else
+            {
+                targetImage[i].gameObject.SetActive(false);
+            }
         }
     }
 
-    public void SetActive(bool active) {
+    public void OnProductUpdate()
+    {
+        var stateSetting = StageManager.Instance.GetStageSetting();
+        SetTarget(leftTargetImages, stateSetting.leftProductItems, GameResultManager.Instance.leftCompleteProduct);
+        SetTarget(rightTargetImages, stateSetting.rightProductItems, GameResultManager.Instance.rightCompleteProduct);
+    }
+
+    public void SetActive(bool active)
+    {
         gameObject.SetActive(active);
 
     }

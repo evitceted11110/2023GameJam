@@ -74,7 +74,9 @@ public class GameResultManager : MonoBehaviour
         }
         get { return isRightComplte; }
     }
-
+    public List<ItemBase> leftCompleteProduct = new List<ItemBase>();
+    public List<ItemBase> rightCompleteProduct = new List<ItemBase>();
+    public Action onProductComplete;
     private void OnMissionCompleteCheck()
     {
         if (isleftComplte && isRightComplte)
@@ -91,7 +93,8 @@ public class GameResultManager : MonoBehaviour
         }
     }
 
-    public void ForceGameComplete() {
+    public void ForceGameComplete()
+    {
         isleftComplte = false;
         isRightComplte = false;
         foreach (Action action in completeCallBack)
@@ -103,10 +106,24 @@ public class GameResultManager : MonoBehaviour
         completeCallBack.Clear();
     }
 
+    public void SetCompleteProduct(bool isLeft, ItemBase item)
+    {
+        if (isLeft)
+            leftCompleteProduct.Add(item);
+        else
+            rightCompleteProduct.Add(item);
+
+        if (onProductComplete != null)
+            onProductComplete();
+
+    }
     public void ResetManager()
     {
         onGameStateChange = null;
+        onProductComplete = null;
         completeCallBack.Clear();
+        leftCompleteProduct.Clear();
+        rightCompleteProduct.Clear();
     }
 }
 

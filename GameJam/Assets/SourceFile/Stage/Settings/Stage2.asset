@@ -32,8 +32,8 @@ MonoBehaviour:
   - {fileID: 6629119574372320384, guid: 93e311ff52e0cee4dbbc4a44d488816d, type: 3}
   rightProductItems:
   - {fileID: 6629119574372320384, guid: 2b729f853f404ab4d923b5ce648628c3, type: 3}
-  totalTime: 90
+  totalTime: 120
   starGap:
-  - 90
+  - 120
   - 75
   - 60

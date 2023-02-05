@@ -35,6 +35,7 @@ public class UICompleteView : MonoBehaviour
         TimeSpan time = TimeSpan.FromSeconds(GameResultManager.Instance.useTime);
         timeResultText.text = string.Format("{0}:{1}", time.Minutes.ToString("00"), time.Seconds.ToString("00"));
         gameObject.SetActive(true);
+        PlayerPrefsService.Instance.SavedUseTime(GameSceneManager.Instance.stageIndex, GameResultManager.Instance.useTime);
     }
 
     public void Hide()

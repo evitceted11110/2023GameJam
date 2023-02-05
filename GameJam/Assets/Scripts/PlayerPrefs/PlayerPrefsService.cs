@@ -23,10 +23,11 @@ public class PlayerPrefsService : MonoBehaviour
     }
     public void SavedUseTime(int stageIndex , float time)
     {
-        if (time > bestTimes[stageIndex])
+        if (time < bestTimes[stageIndex] || bestTimes[stageIndex] == 0)
         {
             bestTimes[stageIndex] = time;
-            PlayerPrefs.SetString("USETIME", JsonConvert.SerializeObject(bestTimes[stageIndex]));
+            string josn = JsonConvert.SerializeObject(bestTimes);
+            PlayerPrefs.SetString("USETIME", josn);
         }
     }
 

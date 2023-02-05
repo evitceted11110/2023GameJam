@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa93e21659e542b488433d1777cea56e, type: 3}
+  m_Name: Stage3
+  m_EditorClassIdentifier: 
+  stageIndex: 2
+  note: "\u7B2C\u4E09\u95DC"
+  createObjects:
+  - {fileID: 810486941337220011, guid: 82ff682164b7d834c9dd5d390ea420f9, type: 3}
+  - {fileID: 3344580510723032457, guid: efd6abc5965261342b416533a1d727fe, type: 3}
+  - {fileID: 2453774399747961899, guid: c9bca9afffc29dd4a8823b8f0fe7de10, type: 3}
+  - {fileID: 6476365667822895490, guid: cf25c5fd6ef9ea54e83afa25ef54f161, type: 3}
+  - {fileID: 5278881808037003794, guid: 878ee24e08072ce428091701e9a8a7ef, type: 3}
+  - {fileID: 1910971247633902943, guid: 0b26262b75572f04287523b1a7e74524, type: 3}
+  - {fileID: 5511331038348374920, guid: 8ac8795498bb6b2429bd40e9cbaf6ef2, type: 3}
+  leftProtalGenList:
+  - {fileID: 6629119574372320384, guid: 38c79827bdb866141bd96503301707e4, type: 3}
+  - {fileID: 6629119574372320384, guid: 502cee33689355c4ca8186af0fad1d05, type: 3}
+  - {fileID: 6629119574372320384, guid: 4a092396e9e5dba458a21b248c14c559, type: 3}
+  rightProtalGenList:
+  - {fileID: 6629119574372320384, guid: d90b082e1404a5840a85ede87e84c81b, type: 3}
+  - {fileID: 6629119574372320384, guid: 18362f2932a8dff49b0e27f481cd96c7, type: 3}
+  - {fileID: 6629119574372320384, guid: 261ca39580f0bcc4c9e8894eb2aa6f66, type: 3}
+  leftProductItems:
+  - {fileID: 6629119574372320384, guid: 93e311ff52e0cee4dbbc4a44d488816d, type: 3}
+  - {fileID: 6629119574372320384, guid: 4df371c2185e5e3498747a0e1198d84c, type: 3}
+  rightProductItems:
+  - {fileID: 6629119574372320384, guid: 2b729f853f404ab4d923b5ce648628c3, type: 3}
+  - {fileID: 6629119574372320384, guid: 78c56bbe56d6d67459fced5a07720607, type: 3}
+  totalTime: 140
+  starGap:
+  - 140
+  - 120
+  - 100

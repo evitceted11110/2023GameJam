@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ee80b0759dcce247a2f3b58d29ad632, type: 3}
+  m_Name: MergeIcon
+  m_EditorClassIdentifier: 
+  mergeScheduleIcon:
+  - itemID: -1
+    activeSp: {fileID: 0}
+    inActiveSp: {fileID: 21300000, guid: 9a0cf583b04a7e443933aec6b9a855ad, type: 3}
+  - itemID: -2
+    activeSp: {fileID: 0}
+    inActiveSp: {fileID: 21300000, guid: 41a9060773a9f29428192d366c5f262e, type: 3}
+  - itemID: 1001
+    activeSp: {fileID: 21300000, guid: 1fbce9319dc152f46a0ffa4ce1cfd33f, type: 3}
+    inActiveSp: {fileID: 21300000, guid: 1fbce9319dc152f46a0ffa4ce1cfd33f, type: 3}
+  - itemID: 1002
+    activeSp: {fileID: 21300000, guid: 20b78108ed44199409ba246360be4b6b, type: 3}
+    inActiveSp: {fileID: 21300000, guid: 20b78108ed44199409ba246360be4b6b, type: 3}
+  - itemID: 2001
+    activeSp: {fileID: 21300000, guid: b445eb3655b1762479261a76f7136fd4, type: 3}
+    inActiveSp: {fileID: 21300000, guid: b445eb3655b1762479261a76f7136fd4, type: 3}
+  - itemID: 2002
+    activeSp: {fileID: 21300000, guid: 99e325369d3dc454cbafec06ab62b4c7, type: 3}
+    inActiveSp: {fileID: 21300000, guid: 99e325369d3dc454cbafec06ab62b4c7, type: 3}
+  - itemID: 2003
+    activeSp: {fileID: 21300000, guid: 6ccafc717efd33f4dbfc62d045876468, type: 3}
+    inActiveSp: {fileID: 21300000, guid: 6ccafc717efd33f4dbfc62d045876468, type: 3}
+  - itemID: 2004
+    activeSp: {fileID: 21300000, guid: 1cb5b764dd4e7ad41b2542d8cb2ebe87, type: 3}
+    inActiveSp: {fileID: 21300000, guid: 1cb5b764dd4e7ad41b2542d8cb2ebe87, type: 3}
+  - itemID: 2005
+    activeSp: {fileID: 21300000, guid: 30ce21750d07aa14aab1a0afc86b4a8c, type: 3}
+    inActiveSp: {fileID: 21300000, guid: 30ce21750d07aa14aab1a0afc86b4a8c, type: 3}
+  - itemID: 2006
+    activeSp: {fileID: 21300000, guid: 168fc305a9185324ca1cf114e2a03fd2, type: 3}
+    inActiveSp: {fileID: 21300000, guid: 168fc305a9185324ca1cf114e2a03fd2, type: 3}
+  - itemID: 2007
+    activeSp: {fileID: 21300000, guid: 52738377d22fd5b4bb0147a0e7e71da5, type: 3}
+    inActiveSp: {fileID: 21300000, guid: 52738377d22fd5b4bb0147a0e7e71da5, type: 3}
+  - itemID: 2008
+    activeSp: {fileID: 21300000, guid: 937bde8a8a8c33144aa2a2dc8b89fca3, type: 3}
+    inActiveSp: {fileID: 21300000, guid: 937bde8a8a8c33144aa2a2dc8b89fca3, type: 3}
+  - itemID: 3001
+    activeSp: {fileID: 21300000, guid: ac6fa4ea045576d43afad492be900304, type: 3}
+    inActiveSp: {fileID: 21300000, guid: ac6fa4ea045576d43afad492be900304, type: 3}
+  - itemID: 3002
+    activeSp: {fileID: 21300000, guid: d45ec270380bbdd429856bfb97d9a96a, type: 3}
+    inActiveSp: {fileID: 21300000, guid: d45ec270380bbdd429856bfb97d9a96a, type: 3}
+  - itemID: 3003
+    activeSp: {fileID: 21300000, guid: 0560a94d89a8e6f47827e2d29ff8416e, type: 3}
+    inActiveSp: {fileID: 21300000, guid: 0560a94d89a8e6f47827e2d29ff8416e, type: 3}
+  - itemID: 3004
+    activeSp: {fileID: 21300000, guid: 94be82b801a780b488fa02b169dd59f5, type: 3}
+    inActiveSp: {fileID: 21300000, guid: 94be82b801a780b488fa02b169dd59f5, type: 3}

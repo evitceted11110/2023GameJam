@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa93e21659e542b488433d1777cea56e, type: 3}
+  m_Name: Stage_FAIL
+  m_EditorClassIdentifier: 
+  stageIndex: 4
+  note: FAIL
+  createObjects:
+  - {fileID: 810486941337220011, guid: 63d6045bde6ec0c40b25981ea19026a6, type: 3}
+  - {fileID: 3344580510723032457, guid: 4a42535ae33d9cb488577f8afa34fd0e, type: 3}
+  - {fileID: 2453774399747961899, guid: b794a330ae802a2408bc31937ed0c1a6, type: 3}
+  - {fileID: 6476365667822895490, guid: c0da252b0e3fb1f43a50033e34b9533f, type: 3}
+  - {fileID: 5278881808037003794, guid: 4f84f73de8f97bc42ad32d8034049d27, type: 3}
+  - {fileID: 1910971247633902943, guid: f8967d941d7f91942aa841d85817e32a, type: 3}
+  - {fileID: 5511331038348374920, guid: 69eee09b614b6a4478f2264a6d7cf9f5, type: 3}
+  leftProtalGenList:
+  - {fileID: 6629119574372320384, guid: 38c79827bdb866141bd96503301707e4, type: 3}
+  - {fileID: 6629119574372320384, guid: 502cee33689355c4ca8186af0fad1d05, type: 3}
+  - {fileID: 6629119574372320384, guid: 4a092396e9e5dba458a21b248c14c559, type: 3}
+  - {fileID: 6629119574372320384, guid: 6076c0139c8374b4e9b722a450fcc5d1, type: 3}
+  rightProtalGenList:
+  - {fileID: 6629119574372320384, guid: d90b082e1404a5840a85ede87e84c81b, type: 3}
+  - {fileID: 6629119574372320384, guid: 18362f2932a8dff49b0e27f481cd96c7, type: 3}
+  - {fileID: 6629119574372320384, guid: 261ca39580f0bcc4c9e8894eb2aa6f66, type: 3}
+  - {fileID: 6629119574372320384, guid: 25715d0b9e108dd4a8419ccdc0483a9b, type: 3}
+  leftProductItems:
+  - {fileID: 6629119574372320384, guid: 93e311ff52e0cee4dbbc4a44d488816d, type: 3}
+  - {fileID: 6629119574372320384, guid: 4df371c2185e5e3498747a0e1198d84c, type: 3}
+  - {fileID: 6629119574372320384, guid: 6076c0139c8374b4e9b722a450fcc5d1, type: 3}
+  rightProductItems:
+  - {fileID: 6629119574372320384, guid: 2b729f853f404ab4d923b5ce648628c3, type: 3}
+  - {fileID: 6629119574372320384, guid: 78c56bbe56d6d67459fced5a07720607, type: 3}
+  - {fileID: 6629119574372320384, guid: 25715d0b9e108dd4a8419ccdc0483a9b, type: 3}
+  totalTime: 15
+  starGap:
+  - 15
+  - 10
+  - 5

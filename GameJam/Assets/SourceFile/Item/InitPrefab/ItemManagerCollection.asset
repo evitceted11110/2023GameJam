@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c628ea3ead002dc42abf05cb1f5fc36e, type: 3}
+  m_Name: ItemManagerCollection
+  m_EditorClassIdentifier: 
+  managers:
+  - note: "\u9999\u8549"
+    prefab: {fileID: 4786466346740861907, guid: b64ac2dbbcac4c44d82aa0081242e553, type: 3}
+  - note: "\u96FB\u6C60"
+    prefab: {fileID: 4786466346740861907, guid: 2da4895c0f1fe2346a88ef2a70f0d84a, type: 3}
+  - note: "\u70E4\u8089"
+    prefab: {fileID: 4786466346740861907, guid: 0907597a555fb9a45ae7e4bbee9b8262, type: 3}
+  - note: "\u8173\u8E0F\u8ECA"
+    prefab: {fileID: 4786466346740861907, guid: 360cf535e235b224ebb2150da2a997f6, type: 3}
+  - note: "\u9AA8\u982D"
+    prefab: {fileID: 4786466346740861907, guid: 2cb64316cc778154bb160ff6a9462e6d, type: 3}
+  - note: "\u9F52\u8F2A"
+    prefab: {fileID: 4786466346740861907, guid: 84534f971a2a24c468a9986949a65f2e, type: 3}
+  - note: "\u9EC3\u91D1"
+    prefab: {fileID: 4786466346740861907, guid: 5b9bab83c7cabed42a8bfa3c1de1681f, type: 3}
+  - note: "\u9435\u584A"
+    prefab: {fileID: 4786466346740861907, guid: 02f9d5e1b523a1847bacae1ac3998618, type: 3}
+  - note: "\u8089"
+    prefab: {fileID: 4786466346740861907, guid: 649098de9b7cff34e996d226d15e1397, type: 3}
+  - note: "\u8089\u98EF"
+    prefab: {fileID: 4786466346740861907, guid: d5c3b6165a0725b4a98b84692c1f9c46, type: 3}
+  - note: "\u87BA\u7D72"
+    prefab: {fileID: 4786466346740861907, guid: 0ac9c4fb9a93c7c43a3fe23595955e9b, type: 3}
+  - note: "\u852C\u83DC"
+    prefab: {fileID: 4786466346740861907, guid: 039c09fea44e424448461e2f085adc1e, type: 3}
+  - note: "\u624B\u9336"
+    prefab: {fileID: 4786466346740861907, guid: 25245227842a9be4e927fad6bf06441d, type: 3}
+  - note: "\u5C0F\u9EA5"
+    prefab: {fileID: 4786466346740861907, guid: 017492456ddebfc439fab984630c340a, type: 3}

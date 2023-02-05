@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa93e21659e542b488433d1777cea56e, type: 3}
+  m_Name: Stage1
+  m_EditorClassIdentifier: 
+  stageIndex: 0
+  note: "\u7B2C\u4E00\u95DC"
+  createObjects:
+  - {fileID: 810486941337220011, guid: 9147992281452e749af28eb8fe8926ca, type: 3}
+  - {fileID: 8632341479961835282, guid: 6db1464cecfe9e2498e4f93e92da3bde, type: 3}
+  - {fileID: 4653934949245669743, guid: e2f61be177c771740aab52eb0d21e98b, type: 3}
+  - {fileID: 1910971247633902943, guid: 738671df2d8954f4f973c11e2e70d22b, type: 3}
+  - {fileID: 5511331038348374920, guid: 9ddc3f2aa18b36943811718d0e31fb10, type: 3}
+  - {fileID: 2453774399747961899, guid: 2ee31e7a458e08e4ea9e9eeaf86008b9, type: 3}
+  leftProtalGenList:
+  - {fileID: 6629119574372320384, guid: 38c79827bdb866141bd96503301707e4, type: 3}
+  - {fileID: 6629119574372320384, guid: 502cee33689355c4ca8186af0fad1d05, type: 3}
+  rightProtalGenList:
+  - {fileID: 6629119574372320384, guid: d90b082e1404a5840a85ede87e84c81b, type: 3}
+  - {fileID: 6629119574372320384, guid: 18362f2932a8dff49b0e27f481cd96c7, type: 3}
+  leftProductItems:
+  - {fileID: 6629119574372320384, guid: 502cee33689355c4ca8186af0fad1d05, type: 3}
+  rightProductItems:
+  - {fileID: 6629119574372320384, guid: 18362f2932a8dff49b0e27f481cd96c7, type: 3}
+  totalTime: 90
+  starGap:
+  - 90
+  - 45
+  - 30

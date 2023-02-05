@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81062a160d133a04faa6bd41e2ffcf65, type: 3}
+  m_Name: PlayerCrontrolSetting_Right
+  m_EditorClassIdentifier: 
+  upKey: up
+  downKey: down
+  rightKey: right
+  leftKey: left
+  actionKey: .
+  talkKey: /
+  moveSpeed: 0.5
+  jumpHeight: 1100
+  throwStrength: 200

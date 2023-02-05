@@ -40,8 +40,8 @@ MonoBehaviour:
   - {fileID: 6629119574372320384, guid: 2b729f853f404ab4d923b5ce648628c3, type: 3}
   - {fileID: 6629119574372320384, guid: 78c56bbe56d6d67459fced5a07720607, type: 3}
   - {fileID: 6629119574372320384, guid: 25715d0b9e108dd4a8419ccdc0483a9b, type: 3}
-  totalTime: 150
+  totalTime: 180
   starGap:
-  - 150
-  - 105
-  - 90
+  - 180
+  - 140
+  - 120

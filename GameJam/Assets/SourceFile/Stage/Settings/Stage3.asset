@@ -39,5 +39,5 @@ MonoBehaviour:
   totalTime: 140
   starGap:
   - 140
-  - 95
-  - 80
+  - 120
+  - 100

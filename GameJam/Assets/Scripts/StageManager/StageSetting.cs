@@ -21,7 +21,7 @@ public class StageSetting : ScriptableObject
 
     public bool[] GetStarResult(float passTime)
     {
-        if (passTime == -1)
+        if (passTime == 0)
         {
             return new bool[starGap.Length];
         }

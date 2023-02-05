@@ -456,6 +456,7 @@ MonoBehaviour:
   slider: {fileID: 463025138}
   text: {fileID: 1833225446}
   pressToStartObject: {fileID: 1999253625}
+  progressAnimationMultiplier: 0.5
 --- !u!114 &469311373
 MonoBehaviour:
   m_ObjectHideFlags: 0

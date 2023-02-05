@@ -10,6 +10,7 @@ public class Collectbench : MonoBehaviour,IHighLightable
     public ItemBase testInjectItem;
     private List<ItemBase> productItems;
     public SpriteRenderer spriteRenderer;
+    public Animator workBenchAni;
     private Material rendererMaterial
     {
         get
@@ -87,6 +88,7 @@ public class Collectbench : MonoBehaviour,IHighLightable
     {
         if (remainingItems.Count == 0)
         {
+            workBenchAni.Play("Right_People_Finish");
             //DestroyProductSchedule();
             if (isLeft)
                 GameResultManager.Instance.IsLeftComplte = true;

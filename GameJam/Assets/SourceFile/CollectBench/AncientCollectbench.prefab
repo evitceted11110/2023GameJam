@@ -191,6 +191,7 @@ MonoBehaviour:
   - {fileID: 6629119574372320384, guid: 2b729f853f404ab4d923b5ce648628c3, type: 3}
   testInjectItem: {fileID: 6629119574372320384, guid: 2b729f853f404ab4d923b5ce648628c3, type: 3}
   spriteRenderer: {fileID: 9070691523590947192}
+  workBenchAni: {fileID: 1929204302347050558}
   isLeft: 1
 --- !u!114 &356282078454199320
 MonoBehaviour:

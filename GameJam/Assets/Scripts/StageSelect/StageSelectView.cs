@@ -5,7 +5,12 @@ using UnityEngine.UI.Extensions.Tweens;
 using Newtonsoft.Json;
 public class StageSelectView : MonoBehaviour
 {
-    public SingleStageSelector[] stageButtonList;
+    private SingleStageSelector[] stageButtonList;
+    public Transform root;
+    private void Awake()
+    {
+        stageButtonList = root.GetComponentsInChildren<SingleStageSelector>();
+    }
     private void Start()
     {
         AudioManagerScript.Instance.CoverPlayAudioClip(AudioClipConst.Home_BGM);

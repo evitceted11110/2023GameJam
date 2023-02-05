@@ -7,6 +7,8 @@ public class StageSetting : ScriptableObject
     public int stageIndex;
     public string note;
     public GameObject[] createObjects;
+    public List<ItemBase> leftProtalGenList;
+    public List<ItemBase> rightProtalGenList;
     public List<ItemBase> leftProductItems;
     public List<ItemBase> rightProductItems;
     //­­¨î®É¶¡

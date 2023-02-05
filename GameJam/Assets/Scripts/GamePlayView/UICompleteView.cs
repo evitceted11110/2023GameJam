@@ -29,7 +29,10 @@ public class UICompleteView : MonoBehaviour
 
     public void Show()
     {
-        AudioManagerScript.Instance.PlayAudioClip(AudioClipConst.Finish);
+        if (GameResultManager.Instance.remainTime > 0)
+            AudioManagerScript.Instance.PlayAudioClip(AudioClipConst.Finish);
+        else
+            AudioManagerScript.Instance.PlayAudioClip(AudioClipConst.Fail);
 
         var stageSetting = StageManager.Instance.GetStageSetting();
         bool[] resultStar = stageSetting.GetStarResult(GameResultManager.Instance.useTime);

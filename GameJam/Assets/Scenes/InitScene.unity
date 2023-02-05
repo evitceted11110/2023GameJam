@@ -1231,6 +1231,13 @@ MonoBehaviour:
     volumeScale: 1
     overlappingMode: 0
     outputSourceNum: 2
+  - name: Fail
+    clips:
+    - {fileID: 8300000, guid: 20209516b41b4b143ace5bf4613eb483, type: 3}
+    tag: []
+    volumeScale: 1
+    overlappingMode: 0
+    outputSourceNum: 2
   audioSourcesPack:
   - name: BGM
     source: {fileID: 1509767711}

@@ -20,5 +20,5 @@ public class AudioClipConst
     public const string Finish = "Finish";
     public const string Pick = "Pick";
     public const string CollectBenchFinish = "CollectBenchFinish";
-
+    public const string Fail = "Fail";
 }

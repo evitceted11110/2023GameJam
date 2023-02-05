@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Particle_Cube
+  m_Name: Particle_FirWork02
   m_Shader: {fileID: 4800000, guid: e064104788d94b349ab13141a30b5660, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
@@ -41,7 +41,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: f27dd3f96429ca74da4c0fd00bd76504, type: 3}
+        m_Texture: {fileID: 2800000, guid: c47a5a39cd90b0c4aa5e57a79cc61213, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -58,13 +58,8 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - AUTOPLAY: 0
-    - PINGPONG: 0
-    - REVERSE: 0
-    - _AnimationSpeed: 10
     - _BumpScale: 1
     - _ColorMask: 15
-    - _ColumnsX: 1
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
@@ -76,8 +71,6 @@ Material:
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
-    - _Progress: 0
-    - _RowsY: 1
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
@@ -86,13 +79,12 @@ Material:
     - _StencilOp: 0
     - _StencilReadMask: 255
     - _StencilWriteMask: 255
-    - _TimerOffset: 0
-    - _TotalFrame: 1
     - _UVSec: 0
     - _UseUIAlphaClip: 0
     - _ZWrite: 1
     m_Colors:
+    - _ClipRect: {r: -32767, g: -32767, b: 32767, a: 32767}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _TintColor: {r: 1, g: 1, b: 1, a: 0.5}
+    - _TintColor: {r: 1, g: 1, b: 1, a: 0.5019608}
   m_BuildTextureStacks: []

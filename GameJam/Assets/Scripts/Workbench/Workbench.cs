@@ -22,6 +22,7 @@ public class Workbench : MonoBehaviour, IHighLightable
 
     public SpriteRenderer spriteRenderer;
     public Transform[] mergeScheduleRoots;
+    public Color inActiveColor;
     private Material rendererMaterial
     {
         get
@@ -67,7 +68,7 @@ public class Workbench : MonoBehaviour, IHighLightable
         {
             MergeSchedule mergeItem = NewMergeSchedule(mergeItems[i], i);
             mergeSchedule.Add(mergeItems[i], mergeItem);
-            mergeItem.inActiveSpriteRd.color = new Color(0.22f, 0.15f, 0.15f, 1);
+            mergeItem.inActiveSpriteRd.color = inActiveColor;
         }
     }
     private MergeSchedule NewMergeSchedule(int itemID, int posIndex)

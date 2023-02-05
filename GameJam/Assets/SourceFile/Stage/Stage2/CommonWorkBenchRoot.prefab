@@ -199,6 +199,22 @@ PrefabInstance:
       propertyPath: switchButon
       value: 
       objectReference: {fileID: 2745291101187123540}
+    - target: {fileID: 8239451776597394042, guid: 2d2056d286655ea48b95d3c7fee619a8, type: 3}
+      propertyPath: inActiveColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8239451776597394042, guid: 2d2056d286655ea48b95d3c7fee619a8, type: 3}
+      propertyPath: inActiveColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8239451776597394042, guid: 2d2056d286655ea48b95d3c7fee619a8, type: 3}
+      propertyPath: inActiveColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8239451776597394042, guid: 2d2056d286655ea48b95d3c7fee619a8, type: 3}
+      propertyPath: inActiveColor.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8239451776597394043, guid: 2d2056d286655ea48b95d3c7fee619a8, type: 3}
       propertyPath: m_Name
       value: LeftWorkbench
@@ -265,6 +281,22 @@ PrefabInstance:
       propertyPath: switchButon
       value: 
       objectReference: {fileID: 6231792311497692742}
+    - target: {fileID: 8239451776597394042, guid: a6a545a7f49227c43986f39cf4a70c1d, type: 3}
+      propertyPath: inActiveColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8239451776597394042, guid: a6a545a7f49227c43986f39cf4a70c1d, type: 3}
+      propertyPath: inActiveColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8239451776597394042, guid: a6a545a7f49227c43986f39cf4a70c1d, type: 3}
+      propertyPath: inActiveColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8239451776597394042, guid: a6a545a7f49227c43986f39cf4a70c1d, type: 3}
+      propertyPath: inActiveColor.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8239451776597394043, guid: a6a545a7f49227c43986f39cf4a70c1d, type: 3}
       propertyPath: m_Name
       value: RightWorkbench

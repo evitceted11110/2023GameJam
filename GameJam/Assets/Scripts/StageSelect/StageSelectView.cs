@@ -25,6 +25,18 @@ public class StageSelectView : MonoBehaviour
             bestTimes = PlayerPrefsService.Instance.bestTimes;
 
         }
+        else
+        {
+            if(bestTimes.Length < stageButtonList.Length)
+            {
+                PlayerPrefsService.Instance.bestTimes = new float[stageButtonList.Length];
+                for(int x = 0; x < stageButtonList.Length; x++)
+                {
+                    PlayerPrefsService.Instance.bestTimes[x] = bestTimes[x];
+                    bestTimes = PlayerPrefsService.Instance.bestTimes;
+                }
+            }
+        }
         StageSetting stageSetting = StageManager.Instance.GetStageSetting();
         for (int x = 0; x < stageButtonList.Length; x++)
         {

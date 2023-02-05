@@ -170,7 +170,7 @@ public class ItemBase : IPoolable, IItem, IHighLightable
         OnConvert(() => { });
     }
 
-    public void OnRelese(float force)
+    public void OnRelese(float xforce, float yForce = 0)
     {
         DoDisappearTimer();
         transform.parent = GetManagerRoot();
@@ -178,7 +178,7 @@ public class ItemBase : IPoolable, IItem, IHighLightable
         itemCollider.enabled = true;
         rigid2D.simulated = true;
         SetHighLight(false);
-        rigid2D.AddForce(new Vector2(force, 0));
+        rigid2D.AddForce(new Vector2(xforce, yForce));
     }
 
     private void DoDisappearTimer()

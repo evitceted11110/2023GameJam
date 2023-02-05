@@ -61,11 +61,7 @@ public class GamePlayView : MonoBehaviour
         GameResultManager.Instance.SetGameState(GameState.COMPLETE);
     }
 
-    public void GameStartClick()
-    {
-        AudioManagerScript.Instance.PlayAudioClip(AudioClipConst.ButtonConfirm);
-        GameResultManager.Instance.SetGameState(GameState.PLAYING);
-    }
+    
     public void ResumeClick()
     {
         AudioManagerScript.Instance.PlayAudioClip(AudioClipConst.ButtonConfirm);

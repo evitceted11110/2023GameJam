@@ -7,6 +7,6 @@ public interface IItem
 {
     void OnConvert(Action onComplete);
     void OnPickUp();
-    void OnRelese(float force);
+    void OnRelese(float xforce, float yforce = 0);
     void SetHighLight(bool isHighLight);
 }

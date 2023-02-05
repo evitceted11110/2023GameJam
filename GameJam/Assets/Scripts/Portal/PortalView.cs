@@ -73,7 +73,7 @@ public class PortalView : MonoBehaviour
         {
             var convertItem = ItemManager.Instance.GetItem(targetID);
             convertItem.transform.position = genTransform.position;
-            convertItem.OnRelese(force);
+            convertItem.OnRelese(Random.Range((force/2f), force), Random.Range(-100, 100));
             view.PlayShoot();
             AudioManagerScript.Instance.PlayAudioClip(AudioClipConst.Portal_Out);
 

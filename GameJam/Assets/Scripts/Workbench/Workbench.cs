@@ -21,6 +21,7 @@ public class Workbench : MonoBehaviour, IHighLightable
     private List<ItemBase> totalMergeItems;
 
     public SpriteRenderer spriteRenderer;
+    public Transform[] mergeScheduleRoots;
     private Material rendererMaterial
     {
         get
@@ -48,28 +49,20 @@ public class Workbench : MonoBehaviour, IHighLightable
     {
         curProductID = item.itemID;
 
-        mergeSchedule.Add(item.itemID, NewMergeSchedule(item.itemID));
-
-        MergeSchedule equalSign = NewMergeSchedule((int)Symbol.Equl);
-        mergeSchedule.Add(equalSign.GetHashCode(), equalSign);
+        mergeSchedule.Add(item.itemID, NewMergeSchedule(item.itemID, mergeScheduleRoots.Length - 1));
 
         mergeItems = MergeTableService.mergeTable[item.itemID];
         remainingItems = MergeTableService.mergeTable[item.itemID];
         for (int i = 0; i < mergeItems.Count; i++)
         {
-            MergeSchedule mergeItem = NewMergeSchedule(mergeItems[i]);
+            MergeSchedule mergeItem = NewMergeSchedule(mergeItems[i], i);
             mergeSchedule.Add(mergeItems[i], mergeItem);
             mergeItem.inActiveSpriteRd.color = new Color(0.22f, 0.15f, 0.15f, 1);
-            if (i != mergeItems.Count - 1)
-            {
-                MergeSchedule plusSign = NewMergeSchedule((int)Symbol.plus);
-                mergeSchedule.Add(plusSign.GetHashCode(), plusSign);
-            }
         }
     }
-    private MergeSchedule NewMergeSchedule(int itemID)
+    private MergeSchedule NewMergeSchedule(int itemID, int posIndex)
     {
-        MergeSchedule obj = Instantiate(mergeSchedulePrefab, root);
+        MergeSchedule obj = Instantiate(mergeSchedulePrefab, mergeScheduleRoots[posIndex]);
         obj.inActiveSpriteRd.sprite = MergeIconService.Instance.GetMergeIcon(itemID).inActiveSp;
         obj.inActiveSpriteRd.enabled = true;
         obj.activeSpriteRd.sprite = MergeIconService.Instance.GetMergeIcon(itemID).activeSp;
@@ -177,11 +170,5 @@ public class Workbench : MonoBehaviour, IHighLightable
     public void SetHighLight(bool isHighLight)
     {
         rendererMaterial.SetFloat("_Brightness", isHighLight ? 2 : 0);
-    }
-
-    public enum Symbol
-    {
-        Equl = -1,
-        plus = -2
     }
 }

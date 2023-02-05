@@ -36,7 +36,7 @@ public class UITargetView : MonoBehaviour
                 }
                 else
                 {
-                    targetImage[i].color = new Color(0.22f, 0.15f, 0.15f, 1);
+                    targetImage[i].color = new Color(0.5f, 0.5f, 0.5f, 0.8f);
                 }
 
                 targetImage[i].gameObject.SetActive(true);

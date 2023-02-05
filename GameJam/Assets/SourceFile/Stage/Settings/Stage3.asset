@@ -12,15 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa93e21659e542b488433d1777cea56e, type: 3}
   m_Name: Stage3
   m_EditorClassIdentifier: 
-  stageIndex: 1
-  note: "\u7B2C\u4E8C\u95DC"
+  stageIndex: 2
+  note: "\u7B2C\u4E09\u95DC"
   createObjects:
-  - {fileID: 810486941337220011, guid: 47ca587fb5d9c724b83cbc4d004c3f45, type: 3}
-  - {fileID: 5278881808037003794, guid: b79a225ebce5857478ba6eaf650e1ae5, type: 3}
-  - {fileID: 3344580510723032457, guid: b81f88d6d64ba6e4babd3a4b6803beb3, type: 3}
-  - {fileID: 1910971247633902943, guid: 793cee400f077dc4b8f54ca2d813da56, type: 3}
-  - {fileID: 5511331038348374920, guid: 8072c7f221be8e548b26356c1f3b4687, type: 3}
-  - {fileID: 2453774399747961899, guid: 74bfe80e09b9aef46a7dc307dbc04d32, type: 3}
-  - {fileID: 6476365667822895490, guid: e0a3ed90f2b40a742936b54b87b9c3ce, type: 3}
+  - {fileID: 810486941337220011, guid: 82ff682164b7d834c9dd5d390ea420f9, type: 3}
+  - {fileID: 3344580510723032457, guid: efd6abc5965261342b416533a1d727fe, type: 3}
+  - {fileID: 5278881808037003794, guid: 878ee24e08072ce428091701e9a8a7ef, type: 3}
+  - {fileID: 1910971247633902943, guid: 0b26262b75572f04287523b1a7e74524, type: 3}
+  - {fileID: 5511331038348374920, guid: 8ac8795498bb6b2429bd40e9cbaf6ef2, type: 3}
+  - {fileID: 2453774399747961899, guid: 0604c91aaed660743af5d9d033029555, type: 3}
+  - {fileID: 6476365667822895490, guid: e9201e82da1084b419f6ef2d570b6224, type: 3}
   leftProductItems: []
   rightProductItems: []
+  totalTime: 110
+  starGap:
+  - 110
+  - 95
+  - 80

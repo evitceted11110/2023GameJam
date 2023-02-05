@@ -58,13 +58,13 @@ public class PortalView : MonoBehaviour
 
     private void ConvertToRight(PortalAbsorber absorber, ItemBase item)
     {
-        OnConvertObject(item, rightItemView.toID, rightItemView.absorber.throwTransform, genForce);
+        OnConvertObject(item, rightItemView.toID, rightItemView.absorber.throwTransform, genForce, rightItemView);
     }
     private void ConvertToLeft(PortalAbsorber absorber, ItemBase item)
     {
-        OnConvertObject(item, leftItemView.toID, leftItemView.absorber.throwTransform, -genForce);
+        OnConvertObject(item, leftItemView.toID, leftItemView.absorber.throwTransform, -genForce, leftItemView);
     }
-    public void OnConvertObject(ItemBase fromItem, int targetID, Transform genTransform, float force)
+    public void OnConvertObject(ItemBase fromItem, int targetID, Transform genTransform, float force, ProtalTransItemView view)
     {
         AudioManagerScript.Instance.PlayAudioClip(AudioClipConst.Portal_In);
 
@@ -74,6 +74,7 @@ public class PortalView : MonoBehaviour
             var convertItem = ItemManager.Instance.GetItem(targetID);
             convertItem.transform.position = genTransform.position;
             convertItem.OnRelese(force);
+            view.PlayShoot();
             AudioManagerScript.Instance.PlayAudioClip(AudioClipConst.Portal_Out);
 
         });
@@ -86,4 +87,12 @@ public class ProtalTransItemView
     public int toID;
     public SpriteRenderer iconRenderer;
     public PortalAbsorber absorber;
+    public ParticleSystem[] shootParticles;
+    private int particleIndex = 0;
+    public void PlayShoot()
+    {
+        particleIndex = (int)Mathf.Repeat(particleIndex + 1, shootParticles.Length);
+        shootParticles[particleIndex].Play();
+    }
+
 }

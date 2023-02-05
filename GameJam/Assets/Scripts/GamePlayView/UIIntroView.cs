@@ -46,4 +46,16 @@ public class UIIntroView : MonoBehaviour
     {
         gameObject.SetActive(false);
     }
+    private void Update()
+    {
+        if (Input.anyKey)
+        {
+            GameStartClick();
+        }
+    }
+    public void GameStartClick()
+    {
+        AudioManagerScript.Instance.PlayAudioClip(AudioClipConst.ButtonConfirm);
+        GameResultManager.Instance.SetGameState(GameState.PLAYING);
+    }
 }

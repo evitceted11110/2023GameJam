@@ -22,6 +22,12 @@ MonoBehaviour:
   - {fileID: 2453774399747961899, guid: 27087505b8e95834da3e93f481eb68f8, type: 3}
   - {fileID: 8632341479961835282, guid: 6db1464cecfe9e2498e4f93e92da3bde, type: 3}
   - {fileID: 8632341479961835282, guid: 036d10fda0ae7b64fa164dadf1513d67, type: 3}
+  leftProtalGenList:
+  - {fileID: 6629119574372320384, guid: 38c79827bdb866141bd96503301707e4, type: 3}
+  - {fileID: 6629119574372320384, guid: 502cee33689355c4ca8186af0fad1d05, type: 3}
+  rightProtalGenList:
+  - {fileID: 6629119574372320384, guid: d90b082e1404a5840a85ede87e84c81b, type: 3}
+  - {fileID: 6629119574372320384, guid: 18362f2932a8dff49b0e27f481cd96c7, type: 3}
   leftProductItems:
   - {fileID: 6629119574372320384, guid: 502cee33689355c4ca8186af0fad1d05, type: 3}
   rightProductItems:

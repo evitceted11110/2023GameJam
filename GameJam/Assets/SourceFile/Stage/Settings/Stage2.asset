@@ -22,8 +22,10 @@ MonoBehaviour:
   - {fileID: 5511331038348374920, guid: 8072c7f221be8e548b26356c1f3b4687, type: 3}
   - {fileID: 2453774399747961899, guid: 74bfe80e09b9aef46a7dc307dbc04d32, type: 3}
   - {fileID: 6476365667822895490, guid: e0a3ed90f2b40a742936b54b87b9c3ce, type: 3}
-  leftProductItems: []
-  rightProductItems: []
+  leftProductItems:
+  - {fileID: 6629119574372320384, guid: 93e311ff52e0cee4dbbc4a44d488816d, type: 3}
+  rightProductItems:
+  - {fileID: 6629119574372320384, guid: 2b729f853f404ab4d923b5ce648628c3, type: 3}
   totalTime: 90
   starGap:
   - 90

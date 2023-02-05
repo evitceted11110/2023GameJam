@@ -5,7 +5,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Workbench : MonoBehaviour
+public class Workbench : MonoBehaviour, IHighLightable
 {
     private Dictionary<int, MergeSchedule> mergeSchedule = new Dictionary<int, MergeSchedule>();
     public MergeSchedule mergeSchedulePrefab;
@@ -19,8 +19,18 @@ public class Workbench : MonoBehaviour
     public bool isLeft;
     private int curMergeIndex = 0;
     private List<ItemBase> totalMergeItems;
-    private void Awake()
+
+    public SpriteRenderer spriteRenderer;
+    private Material rendererMaterial
     {
+        get
+        {
+            return spriteRenderer.sharedMaterial;
+        }
+    }
+    private void Start()
+    {
+        spriteRenderer.sharedMaterial = Material.Instantiate(spriteRenderer.sharedMaterial);
         StageSetting stageSetting = StageManager.Instance.GetStageSetting();
         if (isLeft)
         {
@@ -85,6 +95,10 @@ public class Workbench : MonoBehaviour
             if (item.itemID == id)
             {
                 remainingItems.Remove(id);
+                item.OnRelese(0);
+                item.OnPickUp();
+                item.transform.position = transform.position;
+                item.OnConvert(() => { });
                 mergeSchedule[id].inActiveSpriteRd.enabled = false;
                 mergeSchedule[id].activeSpriteRd.enabled = true;
                 break;
@@ -158,6 +172,11 @@ public class Workbench : MonoBehaviour
         {
             SetProduct(changeItem);
         }
+    }
+
+    public void SetHighLight(bool isHighLight)
+    {
+        rendererMaterial.SetFloat("_Brightness", isHighLight ? 2 : 0);
     }
 
     public enum Symbol

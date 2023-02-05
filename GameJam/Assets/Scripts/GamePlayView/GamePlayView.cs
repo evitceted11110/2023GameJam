@@ -69,7 +69,7 @@ public class GamePlayView : MonoBehaviour
     }
     public void ExitClick()
     {
-        GameResultManager.Instance.SetGameState(GameState.PLAYING);
+        GameSceneManager.Instance.BackToStageSelect();
     }
 
     private void FixedUpdate()

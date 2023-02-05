@@ -468,6 +468,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GamePlayCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 2787084868031329083, guid: 13e210604dd3e6e4ba9ac5a65d70dabb, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2787084868031329087, guid: 13e210604dd3e6e4ba9ac5a65d70dabb, type: 3}
       propertyPath: m_Pivot.x
       value: 0

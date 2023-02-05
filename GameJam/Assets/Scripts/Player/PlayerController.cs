@@ -49,7 +49,7 @@ public class PlayerController : MonoBehaviour
     private Transform pickItemTransform;
     private ItemBase currentPickingItem;
 
-
+    public bool isDebug;
     private void Awake()
     {
         m_Rigidbody2D = GetComponent<Rigidbody2D>();
@@ -62,7 +62,7 @@ public class PlayerController : MonoBehaviour
     }
     private void Update()
     {
-        if (GameResultManager.Instance.gameState == GameState.PLAYING)
+        if (GameResultManager.Instance.gameState == GameState.PLAYING || isDebug)
             InputDetect();
     }
 
@@ -171,7 +171,15 @@ public class PlayerController : MonoBehaviour
                             return true;
                         }
                     }
-
+                    var workBench = colliders[i].GetComponent<Workbench>();
+                    if (workBench != null)
+                    {
+                        if (workBench.CheckEnableInject(currentPickingItem))
+                        {
+                            HighLightManager.Instance.SetHighLight(this, workBench);
+                            return true;
+                        }
+                    }
                 }
                 else
                 {
@@ -245,6 +253,14 @@ public class PlayerController : MonoBehaviour
             {
                 Collectbench collectbench = item as Collectbench;
                 collectbench.InjectItem(currentPickingItem);
+                animator.SetTrigger(ANIMATOR_THROW);
+                animator.SetBool(ANIMATOR_HAS_ITEM, false);
+                currentPickingItem = null;
+            }
+            else if (item != null && item.GetType() == typeof(Workbench))
+            {
+                Workbench workBench = item as Workbench;
+                workBench.InjectItem(currentPickingItem);
                 animator.SetTrigger(ANIMATOR_THROW);
                 animator.SetBool(ANIMATOR_HAS_ITEM, false);
                 currentPickingItem = null;

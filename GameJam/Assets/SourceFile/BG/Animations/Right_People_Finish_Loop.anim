@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Left_People_Idle_02
+  m_Name: Right_People_Finish_Loop
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -125,7 +125,7 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 21300000, guid: c653b703898b62142a21ee093b4a6d7a, type: 3}
+      value: {fileID: 21300000, guid: cd4d86c8bc4066148a9d736eb3319928, type: 3}
     attribute: m_Sprite
     path: People
     classID: 212
@@ -166,7 +166,7 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: 21300000, guid: c653b703898b62142a21ee093b4a6d7a, type: 3}
+    - {fileID: 21300000, guid: cd4d86c8bc4066148a9d736eb3319928, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}

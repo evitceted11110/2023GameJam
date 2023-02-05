@@ -29,6 +29,16 @@ public class Workbench : MonoBehaviour, IHighLightable
             return spriteRenderer.sharedMaterial;
         }
     }
+    public SwitchButton switchButon;
+    
+    private void Awake()
+    {
+        if (switchButon != null)
+        {
+            switchButon.onSwitch += RequestChangeMergeState;
+        }
+    }
+
     private void Start()
     {
         spriteRenderer.sharedMaterial = Material.Instantiate(spriteRenderer.sharedMaterial);
@@ -70,7 +80,6 @@ public class Workbench : MonoBehaviour, IHighLightable
         obj.itemID = itemID;
         return obj;
     }
-
     public bool CheckEnableInject(ItemBase item)
     {
         foreach (int id in remainingItems)
@@ -80,7 +89,6 @@ public class Workbench : MonoBehaviour, IHighLightable
         }
         return false;
     }
-
     public void InjectItem(ItemBase item)
     {
         foreach (int id in remainingItems)
@@ -104,7 +112,6 @@ public class Workbench : MonoBehaviour, IHighLightable
         if (remainingItems.Count == 0)
             Merge();
     }
-
     private void Merge()
     {
         var item = ItemManager.Instance.GetItem(curProductID);
@@ -113,13 +120,11 @@ public class Workbench : MonoBehaviour, IHighLightable
 
         CompleteMerge();
     }
-
     private void CompleteMerge()
     {
         DestroyMergeSchedule();
         Debug.Log("Complete");
     }
-
     private void DestroyMergeSchedule()
     {
         Dictionary<int, MergeSchedule> _mergeSchedule = new Dictionary<int, MergeSchedule>(mergeSchedule);

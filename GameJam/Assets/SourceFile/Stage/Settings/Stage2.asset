@@ -20,7 +20,7 @@ MonoBehaviour:
   - {fileID: 3344580510723032457, guid: b81f88d6d64ba6e4babd3a4b6803beb3, type: 3}
   - {fileID: 1910971247633902943, guid: 793cee400f077dc4b8f54ca2d813da56, type: 3}
   - {fileID: 5511331038348374920, guid: 8072c7f221be8e548b26356c1f3b4687, type: 3}
-  - {fileID: 2453774399747961899, guid: 74bfe80e09b9aef46a7dc307dbc04d32, type: 3}
+  - {fileID: 2453774399747961899, guid: 27087505b8e95834da3e93f481eb68f8, type: 3}
   - {fileID: 6476365667822895490, guid: e0a3ed90f2b40a742936b54b87b9c3ce, type: 3}
   leftProtalGenList:
   - {fileID: 6629119574372320384, guid: 38c79827bdb866141bd96503301707e4, type: 3}

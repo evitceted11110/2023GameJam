@@ -91,6 +91,18 @@ public class GameResultManager : MonoBehaviour
         }
     }
 
+    public void ForceGameComplete() {
+        isleftComplte = false;
+        isRightComplte = false;
+        foreach (Action action in completeCallBack)
+        {
+            action.Invoke();
+        }
+        CollectManager.Instance.GameMissionComplete();
+        Debug.LogWarning("Mission Complete");
+        completeCallBack.Clear();
+    }
+
     public void ResetManager()
     {
         onGameStateChange = null;

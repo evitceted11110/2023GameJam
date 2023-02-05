@@ -30,7 +30,7 @@ public class Workbench : MonoBehaviour, IHighLightable
         }
     }
     public SwitchButton switchButon;
-    
+
     private void Awake()
     {
         if (switchButon != null)
@@ -61,8 +61,8 @@ public class Workbench : MonoBehaviour, IHighLightable
 
         mergeSchedule.Add(item.itemID, NewMergeSchedule(item.itemID, mergeScheduleRoots.Length - 1));
 
-        mergeItems = MergeTableService.mergeTable[item.itemID];
-        remainingItems = MergeTableService.mergeTable[item.itemID];
+        mergeItems = new List<int>(MergeTableService.mergeTable[item.itemID]);
+        remainingItems = new List<int>(MergeTableService.mergeTable[item.itemID]);
         for (int i = 0; i < mergeItems.Count; i++)
         {
             MergeSchedule mergeItem = NewMergeSchedule(mergeItems[i], i);

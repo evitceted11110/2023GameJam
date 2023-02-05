@@ -29,7 +29,7 @@ public class GamePlayView : MonoBehaviour
             _timer = value;
             GameResultManager.Instance.setUseTime(_timer);
             TimeSpan time = TimeSpan.FromSeconds(StageManager.Instance.GetStageSetting().totalTime - _timer);
-            timerText.text = string.Format("{0}:{1}", time.Minutes.ToString("00"),time.Seconds.ToString("00"));
+            timerText.text = string.Format("{0}:{1}", time.Minutes.ToString("00"), time.Seconds.ToString("00"));
         }
     }
     public void Start()
@@ -56,7 +56,6 @@ public class GamePlayView : MonoBehaviour
     void OnMissionComplete()
     {
         GameResultManager.Instance.SetGameState(GameState.COMPLETE);
-
     }
 
     public void GameStartClick()
@@ -77,7 +76,11 @@ public class GamePlayView : MonoBehaviour
         if (GameResultManager.Instance.gameState == GameState.PLAYING)
         {
             Timer += Time.deltaTime;
-
+            if (Timer >= StageManager.Instance.GetStageSetting().totalTime)
+            {
+                //¶W®É
+                GameResultManager.Instance.ForceGameComplete();
+            }
         }
     }
     // Update is called once per frame

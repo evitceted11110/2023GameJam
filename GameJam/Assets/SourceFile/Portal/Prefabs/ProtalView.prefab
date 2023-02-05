@@ -24661,12 +24661,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be105253024a6b24ca73aaaeb432a172, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftItemData:
-    toID: 2002
+  leftItemView:
+    toID: 0
     iconRenderer: {fileID: 477136660535687019}
     absorber: {fileID: 7440985678422381974}
-  rightItemData:
-    toID: 2006
+  rightItemView:
+    toID: 0
     iconRenderer: {fileID: 5060096535393824180}
     absorber: {fileID: 1703858559623680401}
   genForce: 250

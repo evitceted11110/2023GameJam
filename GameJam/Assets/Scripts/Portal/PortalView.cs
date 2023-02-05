@@ -4,41 +4,65 @@ using UnityEngine;
 
 public class PortalView : MonoBehaviour
 {
-    public ProtalTransItemData leftItemData;
-    public ProtalTransItemData rightItemData;
-
+    public ProtalTransItemView leftItemView;
+    public ProtalTransItemView rightItemView;
+    public SwitchButton leftButton;
+    public SwitchButton rightButton;
     public float genForce;
+    private int rightIndex;
+    private int leftIndex;
     private void Awake()
     {
-        leftItemData.absorber.onAbsor = ConvertToRight;
-        rightItemData.absorber.onAbsor = ConvertToLeft;
+        leftItemView.absorber.onAbsor = ConvertToRight;
+        rightItemView.absorber.onAbsor = ConvertToLeft;
+
+        if (leftButton != null)
+        {
+            leftButton.onSwitch += SwitchNextLeftItem;
+        }
+        if (rightButton != null)
+        {
+            rightButton.onSwitch += SwitchNextRightItem;
+        }
+        rightIndex = 0;
+        leftIndex = 0;
     }
 
     private void Start()
     {
-        SetRightID(rightItemData.toID);
-        SetLeftID(leftItemData.toID);
+        SetRightID();
+        SetLeftID();
     }
 
-    public void SetRightID(int id)
+    public void SwitchNextRightItem()
     {
-        rightItemData.toID = id;
-        rightItemData.iconRenderer.sprite = MergeIconService.Instance.GetMergeIcon(id).activeSp;
+        rightIndex = (int)Mathf.Repeat(rightIndex + 1, StageManager.Instance.GetStageSetting().rightProtalGenList.Count);
+        SetRightID();
+    }
+    public void SwitchNextLeftItem()
+    {
+        leftIndex = (int)Mathf.Repeat(leftIndex + 1, StageManager.Instance.GetStageSetting().leftProtalGenList.Count);
+        SetLeftID();
+    }
+    private void SetRightID()
+    {
+        rightItemView.toID = StageManager.Instance.GetStageSetting().rightProtalGenList[rightIndex].itemID;
+        rightItemView.iconRenderer.sprite = MergeIconService.Instance.GetMergeIcon(rightItemView.toID).activeSp;
     }
 
-    public void SetLeftID(int id)
+    private void SetLeftID()
     {
-        leftItemData.toID = id;
-        leftItemData.iconRenderer.sprite = MergeIconService.Instance.GetMergeIcon(id).activeSp;
+        leftItemView.toID = StageManager.Instance.GetStageSetting().leftProtalGenList[leftIndex].itemID; ;
+        leftItemView.iconRenderer.sprite = MergeIconService.Instance.GetMergeIcon(leftItemView.toID).activeSp;
     }
 
     private void ConvertToRight(PortalAbsorber absorber, ItemBase item)
     {
-        OnConvertObject(item, rightItemData.toID, rightItemData.absorber.throwTransform, genForce);
+        OnConvertObject(item, rightItemView.toID, rightItemView.absorber.throwTransform, genForce);
     }
     private void ConvertToLeft(PortalAbsorber absorber, ItemBase item)
     {
-        OnConvertObject(item, leftItemData.toID, leftItemData.absorber.throwTransform, -genForce);
+        OnConvertObject(item, leftItemView.toID, leftItemView.absorber.throwTransform, -genForce);
     }
     public void OnConvertObject(ItemBase fromItem, int targetID, Transform genTransform, float force)
     {
@@ -53,7 +77,7 @@ public class PortalView : MonoBehaviour
 }
 
 [System.Serializable]
-public class ProtalTransItemData
+public class ProtalTransItemView
 {
     public int toID;
     public SpriteRenderer iconRenderer;

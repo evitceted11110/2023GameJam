@@ -28,14 +28,25 @@ public class StageSelectView : MonoBehaviour
         StageSetting stageSetting = StageManager.Instance.GetStageSetting();
         for (int x = 0; x < stageButtonList.Length; x++)
         {
-            bool[] starResult = stageSetting.GetStarResult(bestTimes[x]);
-            for(int y = 0; y < starResult.Length; y++)
+            if (x < bestTimes.Length)
             {
-                if (starResult[y])
-                    stageButtonList[x].stars[y].SetActive(true);
-                else
-                    stageButtonList[x].stars[y].SetActive(false);
+                bool[] starResult = stageSetting.GetStarResult(bestTimes[x]);
+                for (int y = 0; y < starResult.Length; y++)
+                {
+                    if (starResult[y])
+                        stageButtonList[x].stars[y].SetActive(true);
+                    else
+                        stageButtonList[x].stars[y].SetActive(false);
+                }
             }
+            else
+            {
+                for (int y = 0; y < stageButtonList[x].stars.Length; y++)
+                {
+                    stageButtonList[x].stars[y].SetActive(false);
+                }
+            }
+           
         }
     }
 }
